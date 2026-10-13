@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <defs>
+    <linearGradient id="wood" x1="0" y1="0" x2="0.08" y2="1">
+      <stop stop-color="#70482e"/><stop offset=".5" stop-color="#533420"/><stop offset="1" stop-color="#422719"/>
+    </linearGradient>
+    <linearGradient id="bronze" x1="0" y1="0" x2=".15" y2="1">
+      <stop stop-color="#d0a567"/><stop offset=".38" stop-color="#a67b46"/><stop offset=".7" stop-color="#80572f"/><stop offset="1" stop-color="#b0874d"/>
+    </linearGradient>
+    <clipPath id="face"><path d="M12 8H116L120 12V116L116 120H12L8 116V12Z"/></clipPath>
+  </defs>
+  <path d="M9 4H119L126 11V121L120 127H8L2 121V11Z" fill="#160f0b" opacity=".45"/>
+  <path d="M8 1H120L126 7V119L120 125H8L2 119V7Z" fill="#281a12" stroke="#21160f" stroke-width="2"/>
+  <path d="M9 4H119L123 8V118L119 122H9L5 118V8Z" fill="url(#bronze)"/>
+  <path d="M12 8H116L120 12V116L116 120H12L8 116V12Z" fill="url(#wood)" stroke="#3b2517" stroke-width="1.5"/>
+  <g clip-path="url(#face)" fill="none" stroke-linecap="round">
+    <path d="M8 43H120M8 83H120" stroke="#23160f" stroke-width="1.8" opacity=".5"/>
+    <path d="M8 45H120M8 85H120" stroke="#b28b54" stroke-width=".8" opacity=".2"/>
+    <g stroke="#c39a63" stroke-width=".8" opacity=".18">
+      <path d="M8 17C38 13 67 22 120 16M8 24C40 29 75 19 120 25M8 33C29 28 85 37 120 31"/>
+      <path d="M8 51C22 48 32 56 44 53S91 49 120 54M8 61C38 64 83 57 120 62M8 73C31 67 58 76 120 71"/>
+      <path d="M8 94C50 98 75 90 120 96M8 107C30 102 69 111 120 105M8 115C55 113 70 118 120 113"/>
+    </g>
+    <g stroke="#1f140e" stroke-width=".8" opacity=".25">
+      <path d="M8 20C36 17 80 25 120 20M8 36C53 33 83 39 120 36M8 57C40 54 74 63 120 56M8 77C57 80 83 72 120 78M8 99C41 96 67 104 120 99M8 111C36 108 78 116 120 110"/>
+      <ellipse cx="38" cy="57" rx="9" ry="2.8"/><ellipse cx="38" cy="57" rx="4" ry="1.1"/>
+      <ellipse cx="91" cy="103" rx="7" ry="2.2"/>
+    </g>
+  </g>
+  <path d="M10 5H118L122 9M5 10V117M10 9H116" fill="none" stroke="#e6c38c" stroke-width=".9" opacity=".5"/>
+  <path d="M10 120H116L120 116V12" fill="none" stroke="#24160e" stroke-width="1" opacity=".7"/>
+  <g fill="#ad854d" stroke="#4a301c" stroke-width="1">
+    <circle cx="9" cy="9" r="2.4"/><circle cx="119" cy="9" r="2.4"/>
+    <circle cx="9" cy="118" r="2.4"/><circle cx="119" cy="118" r="2.4"/>
+  </g>
+  <g fill="#e3c28c" opacity=".8">
+    <circle cx="8.5" cy="8.2" r=".8"/><circle cx="118.5" cy="8.2" r=".8"/>
+    <circle cx="8.5" cy="117.2" r=".8"/><circle cx="118.5" cy="117.2" r=".8"/>
+  </g>
+</svg>

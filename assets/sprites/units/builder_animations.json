@@ -1,0 +1,59 @@
+{
+  "frame_size": [
+    256,
+    256
+  ],
+  "ground_anchor": [
+    128.0,
+    193.401
+  ],
+  "world_scale": 0.4873949579831933,
+  "directions": 8,
+  "clips": {
+    "idle": {
+      "frames": 60,
+      "fps": 30,
+      "duration": 2.0,
+      "columns": 20,
+      "rows_per_direction": 3,
+      "texture": "res://assets/sprites/units/builder_idle_sheet.png"
+    },
+    "walk": {
+      "frames": 30,
+      "fps": 30,
+      "duration": 1.0,
+      "columns": 10,
+      "rows_per_direction": 3,
+      "texture": "res://assets/sprites/units/builder_walk_sheet.png",
+      "ground_speed_mps": 0.7741935483870968
+    },
+    "run": {
+      "frames": 18,
+      "fps": 30,
+      "duration": 0.6,
+      "columns": 6,
+      "rows_per_direction": 3,
+      "texture": "res://assets/sprites/units/builder_run_sheet.png",
+      "ground_speed_mps": 4.833333333333333
+    },
+    "hammer": {
+      "frames": 36,
+      "fps": 30,
+      "duration": 1.2,
+      "columns": 12,
+      "rows_per_direction": 3,
+      "texture": "res://assets/sprites/units/builder_hammer_sheet.png",
+      "impact_phase": 0.6,
+      "impact_local_m": [
+        0.34,
+        0.71,
+        0.91
+      ]
+    }
+  },
+  "pixels_per_metre": 88.27586206896552,
+  "ground_projection_y": 0.7276068751089989,
+  "source": "assets/units/builder/builder_rigged.blend",
+  "direction_order": "E, SE, S, SW, W, NW, N, NE",
+  "skeleton_bones": 18
+}

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <defs>
+    <linearGradient id="metal" x1="0" y1="0" x2=".2" y2="1">
+      <stop stop-color="#b58b52"/><stop offset=".4" stop-color="#946b3e"/><stop offset="1" stop-color="#705030"/>
+    </linearGradient>
+    <linearGradient id="rim" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#e0bc82"/><stop offset=".4" stop-color="#bb945c"/><stop offset="1" stop-color="#6c4729"/>
+    </linearGradient>
+  </defs>
+  <path d="M9 4H119L126 11V121L120 127H8L2 121V11Z" fill="#160f0b" opacity=".45"/>
+  <path d="M8 1H120L126 7V119L120 125H8L2 119V7Z" fill="#382618" stroke="#24190f" stroke-width="2"/>
+  <path d="M9 4H119L123 8V118L119 122H9L5 118V8Z" fill="url(#rim)"/>
+  <path d="M12 8H116L120 12V116L116 120H12L8 116V12Z" fill="url(#metal)" stroke="#68472c" stroke-width="1.5"/>
+  <path d="M12 10H115L118 13M10 14V115M14 118H114" fill="none" stroke="#ecd1a3" stroke-width=".8" opacity=".3"/>
+  <g fill="none" stroke="#f0d1a0" stroke-width=".7" opacity=".12">
+    <path d="M22 21L37 19M61 29L88 26M13 42L26 41M78 52L104 49M28 66L56 65M90 77L111 74M13 91L43 89M59 102L80 100M94 110L111 108"/>
+  </g>
+  <g fill="#62412a" opacity=".2">
+    <circle cx="32" cy="38" r="1"/><circle cx="72" cy="18" r=".8"/><circle cx="93" cy="63" r=".9"/>
+    <circle cx="17" cy="74" r=".8"/><circle cx="61" cy="91" r="1"/><circle cx="102" cy="107" r=".7"/>
+  </g>
+  <g fill="#b89056" stroke="#583922" stroke-width="1">
+    <circle cx="9" cy="9" r="2.4"/><circle cx="119" cy="9" r="2.4"/>
+    <circle cx="9" cy="118" r="2.4"/><circle cx="119" cy="118" r="2.4"/>
+  </g>
+  <g fill="#efd4a2" opacity=".8">
+    <circle cx="8.5" cy="8.2" r=".8"/><circle cx="118.5" cy="8.2" r=".8"/>
+    <circle cx="8.5" cy="117.2" r=".8"/><circle cx="118.5" cy="117.2" r=".8"/>
+  </g>
+</svg>

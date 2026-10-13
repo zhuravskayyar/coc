@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <defs>
+    <linearGradient id="wood" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#453322"/><stop offset="1" stop-color="#251b14"/>
+    </linearGradient>
+    <linearGradient id="bronze" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#b58c52"/><stop offset="1" stop-color="#73502e"/>
+    </linearGradient>
+  </defs>
+  <path d="M9 4H119L126 11V121L120 127H8L2 121V11Z" fill="#100b08" opacity=".5"/>
+  <path d="M8 1H120L126 7V119L120 125H8L2 119V7Z" fill="#22180f" stroke="#1c130d" stroke-width="2"/>
+  <path d="M9 4H119L123 8V118L119 122H9L5 118V8Z" fill="url(#bronze)"/>
+  <path d="M12 8H116L120 12V116L116 120H12L8 116V12Z" fill="url(#wood)" stroke="#1e140d" stroke-width="1.5"/>
+  <path d="M10 24C44 21 69 28 118 23M10 44C43 48 84 42 118 47M10 70C54 65 83 75 118 69M10 94C39 98 76 91 118 96M10 111C51 108 70 115 118 110" fill="none" stroke="#b38e59" stroke-width=".8" opacity=".12"/>
+  <g fill="#987244" stroke="#4a301c" stroke-width="1">
+    <circle cx="9" cy="9" r="2.4"/><circle cx="119" cy="9" r="2.4"/>
+    <circle cx="9" cy="118" r="2.4"/><circle cx="119" cy="118" r="2.4"/>
+  </g>
+</svg>

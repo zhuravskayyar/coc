@@ -1,0 +1,142 @@
+[gd_scene format=3 uid="uid://xdm26una7afr"]
+
+[ext_resource type="Script" uid="uid://b8qte4s2sqbr" path="res://scripts/village_map.gd" id="1_map"]
+[ext_resource type="Script" uid="uid://b2wesq4xph0s6" path="res://scripts/map_camera.gd" id="2_camera"]
+[ext_resource type="Script" uid="uid://hkvd6jguhwv1" path="res://scripts/placement_grid_overlay.gd" id="3_grid"]
+[ext_resource type="Shader" uid="uid://48gb0yt8voyv" path="res://assets/shaders/playable_grass.gdshader" id="4_grass"]
+[ext_resource type="Script" uid="uid://b6x435edoclid" path="res://scripts/grass_field_tiles.gd" id="5_field"]
+[ext_resource type="Script" uid="uid://uu40uqk04uyw" path="res://scripts/grass_border_tiles.gd" id="6_border"]
+[ext_resource type="Shader" uid="uid://bc77fo3f3d6mf" path="res://assets/shaders/border_grass.gdshader" id="7_border_grass"]
+[ext_resource type="Texture2D" uid="uid://cra848fvmnot1" path="res://assets/sprites/grass_light.png" id="8_field_grass"]
+[ext_resource type="PackedScene" path="res://scenes/background_environment.tscn" id="9_environment"]
+[ext_resource type="Script" uid="uid://bsfwurb4dbveh" path="res://scripts/village_building.gd" id="10_building"]
+[ext_resource type="Script" uid="uid://baq5n8ee5os8l" path="res://scripts/wall_placement.gd" id="11_wall_placement"]
+[ext_resource type="Script" path="res://scripts/ui/village_hud.gd" id="12_hud"]
+[ext_resource type="Script" path="res://scripts/ui/village_interaction.gd" id="13_interaction"]
+[ext_resource type="Script" path="res://scripts/village_economy.gd" id="14_economy"]
+[ext_resource type="Script" path="res://scripts/builder_manager.gd" id="15_builders"]
+[ext_resource type="Script" path="res://scripts/army_manager.gd" id="16_army"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_border"]
+shader = ExtResource("7_border_grass")
+shader_parameter/grass_texture = ExtResource("8_field_grass")
+shader_parameter/grass_tint = Color(0.74, 0.79, 0.62, 1)
+shader_parameter/checker_darkening = 0.04
+shader_parameter/tile_size = Vector2(96, 72)
+shader_parameter/total_size = 50.0
+shader_parameter/border_size = 3.0
+shader_parameter/undergrowth_strength = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_grass"]
+shader = ExtResource("4_grass")
+shader_parameter/grass_texture = ExtResource("8_field_grass")
+shader_parameter/grass_tint = Color(0.74, 0.79, 0.62, 1)
+shader_parameter/checker_darkening = 0.04
+
+[node name="Main" type="Node2D" unique_id=1862562001]
+y_sort_enabled = true
+
+[node name="Background" parent="." unique_id=1310771322 instance=ExtResource("9_environment")]
+position = Vector2(-97, 0)
+
+[node name="VillageMap" type="Node2D" parent="." unique_id=1394992899]
+texture_filter = 4
+script = ExtResource("1_map")
+
+[node name="GrassFrame" type="Node2D" parent="VillageMap" unique_id=354888514]
+material = SubResource("ShaderMaterial_border")
+script = ExtResource("6_border")
+
+[node name="PlayableGrass" type="Node2D" parent="VillageMap" unique_id=1137742745]
+z_index = 10
+material = SubResource("ShaderMaterial_grass")
+script = ExtResource("5_field")
+
+[node name="PlacementGridOverlay" type="Node2D" parent="VillageMap" unique_id=1018233006]
+visible = false
+z_index = 20
+script = ExtResource("3_grid")
+
+[node name="WallPlacement" type="Node2D" parent="VillageMap" unique_id=1840389595]
+z_index = 30
+script = ExtResource("11_wall_placement")
+
+[node name="Buildings" type="Node2D" parent="." unique_id=1932794375]
+z_index = 30
+y_sort_enabled = true
+texture_filter = 4
+
+[node name="Temple" type="Node2D" parent="Buildings" unique_id=312177072]
+script = ExtResource("10_building")
+cell = Vector2i(20, 20)
+
+[node name="WarTent" type="Node2D" parent="Buildings" unique_id=522695095]
+position = Vector2(336, 144)
+script = ExtResource("10_building")
+building_type = "war_tent"
+cell = Vector2i(26, 19)
+
+[node name="UnitCamp" type="Node2D" parent="Buildings" unique_id=1062628713]
+z_index = -13
+y_sort_enabled = true
+position = Vector2(-288, 252)
+script = ExtResource("10_building")
+building_type = "unit_camp"
+cell = Vector2i(20, 26)
+
+[node name="GoldMine" type="Node2D" parent="Buildings" unique_id=433901426]
+position = Vector2(-336, -216)
+script = ExtResource("10_building")
+building_type = "gold_extractor"
+cell = Vector2i(14, 21)
+
+[node name="GoldStorage" type="Node2D" parent="Buildings" unique_id=2129478325]
+position = Vector2(96, 324)
+script = ExtResource("10_building")
+building_type = "gold_storage"
+cell = Vector2i(26, 24)
+
+[node name="BuilderHut1" type="Node2D" parent="Buildings"]
+script = ExtResource("10_building")
+building_type = "builder_hut"
+cell = Vector2i(18, 14)
+
+[node name="BuilderHut2" type="Node2D" parent="Buildings"]
+script = ExtResource("10_building")
+building_type = "builder_hut"
+cell = Vector2i(21, 14)
+
+[node name="Units" type="Node2D" parent="."]
+z_index = 30
+y_sort_enabled = true
+
+[node name="DecorationsEffects" type="Node2D" parent="." unique_id=73638446]
+z_index = 40
+
+[node name="VillageEconomy" type="Node" parent="."]
+script = ExtResource("14_economy")
+
+[node name="BuilderManager" type="Node" parent="."]
+script = ExtResource("15_builders")
+
+[node name="ArmyManager" type="Node" parent="."]
+script = ExtResource("16_army")
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=571672137]
+layer = 50
+
+[node name="VillageHUD" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("12_hud")
+
+[node name="MapCamera" type="Camera2D" parent="." unique_id=1634487915]
+script = ExtResource("2_camera")
+
+[node name="VillageInteraction" type="Node2D" parent="."]
+script = ExtResource("13_interaction")

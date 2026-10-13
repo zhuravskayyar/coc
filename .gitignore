@@ -1,0 +1,7 @@
+# Godot-generated editor cache.
+.godot/
+
+# Python tools and Blender backup files.
+__pycache__/
+*.py[cod]
+*.blend[0-9]*

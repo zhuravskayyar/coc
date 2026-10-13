@@ -1,0 +1,35 @@
+[gd_scene format=3]
+
+[ext_resource type="Texture2D" path="res://assets/sprites/units/builder_idle_sheet.png" id="1_builder"]
+[ext_resource type="Script" path="res://scripts/builder_unit.gd" id="2_behavior"]
+
+[sub_resource type="Gradient" id="Gradient_shadow"]
+colors = PackedColorArray(0.08, 0.06, 0.025, 0.28, 0.08, 0.06, 0.025, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture_shadow"]
+gradient = SubResource("Gradient_shadow")
+width = 64
+height = 32
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 1)
+
+[node name="Builder" type="Node2D"]
+visible = false
+texture_filter = 4
+script = ExtResource("2_behavior")
+
+[node name="GroundShadow" type="Sprite2D" parent="."]
+z_as_relative = false
+z_index = 18
+position = Vector2(0, -2)
+scale = Vector2(0.55, 0.55)
+texture = SubResource("GradientTexture_shadow")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+scale = Vector2(0.487395, 0.487395)
+texture = ExtResource("1_builder")
+centered = false
+offset = Vector2(-128, -193.401)
+hframes = 20
+vframes = 24

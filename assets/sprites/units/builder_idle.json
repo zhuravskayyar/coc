@@ -1,0 +1,14 @@
+{
+  "texture": "res://assets/sprites/units/builder_idle.png",
+  "size": [
+    512,
+    512
+  ],
+  "ground_anchor": [
+    256.0,
+    412.43
+  ],
+  "camera_elevation_degrees": 46.68614334171696,
+  "pose": "static resting pose",
+  "source": "assets/units/builder/builder.blend"
+}

@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3]
+
+[ext_resource type="Shader" path="res://assets/shaders/militia_color.gdshader" id="1_color"]
+
+[resource]
+shader = ExtResource("1_color")
+shader_parameter/brightness_gamma = 1.05
+shader_parameter/saturation = 1.8
+shader_parameter/contrast = 1.25

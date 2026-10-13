@@ -1,0 +1,17 @@
+{
+  "mesh_objects": 361,
+  "glb_mesh_objects": 25,
+  "vertices": 50149,
+  "triangles": 98060,
+  "materials": 25,
+  "height_m": 2.111,
+  "rigged": false,
+  "animated": false,
+  "orientation": "Blender Z-up, -Y forward; glTF Y-up",
+  "files": [
+    "builder.blend",
+    "builder.glb",
+    "builder_preview.png",
+    "builder_front.png"
+  ]
+}

@@ -1,0 +1,25 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/arrow_projectile.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://assets/sprites/units/archer_arrow_sheet.png" id="2_arrow"]
+
+[sub_resource type="RectangleShape2D" id="Shape_arrow"]
+size = Vector2(24, 3)
+
+[node name="ArrowProjectile" type="Area2D"]
+texture_filter = 4
+z_as_relative = false
+z_index = 32
+collision_layer = 0
+collision_mask = 0
+monitoring = false
+monitorable = false
+script = ExtResource("1_script")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_arrow")
+centered = false
+hframes = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("Shape_arrow")

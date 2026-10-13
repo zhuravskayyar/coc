@@ -1,0 +1,346 @@
+{
+  "generator": "built-in image_gen",
+  "reference": "User-supplied Clash of Clans map screenshot",
+  "transparent_background": true,
+  "common_prompt": "Use case: stylized-concept.\nAsset type: one production-ready transparent PNG environment sprite for a 2D isometric village-building game in Godot.\nStyle: match the supplied Clash of Clans screenshot as a visual reference only: charming stylized mobile-strategy 3D painted sprites, rounded leafy canopies made of chunky readable leaf masses, natural lime/olive green highlights, deep green shaded foliage, warm brown trunks, warm gray stones. Broad readable forms that hold up when scaled down, modest surface detail. Match the elevated orthographic isometric view of the reference, camera looking down around 40 degrees, ground footprint projected with width-to-height roughly 4:3. Top-left daylight, compact soft shadows toward bottom-right.\nBackdrop: genuine transparent alpha outside the sprite. The asset sits flush on ground, never on a thick diamond tile, floating island, cutaway earth slab or pedestal. Ground patches, if requested, are thin, irregular and taper softly into transparency, no straight geometric boundary. Center the complete sprite with ample transparent padding and keep every branch, leaf, shadow and ground patch inside the frame.\nConstraints: exactly one cohesive standalone sprite, no multiple separated variants, no sprite sheet, no labels, no letters, no watermark, no buildings, no game UI, no characters, no props outside the requested vegetation/rocks/shore/path. Asymmetric organic arrangement, no rectangular borders.",
+  "assets": [
+    {
+      "id": "forest_01",
+      "folder": "forest",
+      "size": "large",
+      "tiles": [
+        6,
+        6
+      ],
+      "name": "Лісовий кластер 1",
+      "subject": "Large dense woodland corner cluster for the upper-left far background: six broadleaf trees of three different heights with overlapping crowns, three low shrubs, two restrained tall grass tufts, and a small uneven patch of darker earth under the canopy. Tallest trees toward the back-left, shorter bushes toward the front-right, with a tapered open approach toward the playable field. No path inside this module.",
+      "file": "forest/forest_01.png",
+      "prompt": "Use case: stylized-concept.\nAsset type: one production-ready transparent PNG environment sprite for a 2D isometric village-building game in Godot.\nStyle: match the supplied Clash of Clans screenshot as a visual reference only: charming stylized mobile-strategy 3D painted sprites, rounded leafy canopies made of chunky readable leaf masses, natural lime/olive green highlights, deep green shaded foliage, warm brown trunks, warm gray stones. Broad readable forms that hold up when scaled down, modest surface detail. Match the elevated orthographic isometric view of the reference, camera looking down around 40 degrees, ground footprint projected with width-to-height roughly 4:3. Top-left daylight, compact soft shadows toward bottom-right.\nBackdrop: genuine transparent alpha outside the sprite. The asset sits flush on ground, never on a thick diamond tile, floating island, cutaway earth slab or pedestal. Ground patches, if requested, are thin, irregular and taper softly into transparency, no straight geometric boundary. Center the complete sprite with ample transparent padding and keep every branch, leaf, shadow and ground patch inside the frame.\nConstraints: exactly one cohesive standalone sprite, no multiple separated variants, no sprite sheet, no labels, no letters, no watermark, no buildings, no game UI, no characters, no props outside the requested vegetation/rocks/shore/path. Asymmetric organic arrangement, no rectangular borders.\nSubject: Large dense woodland corner cluster for the upper-left far background: six broadleaf trees of three different heights with overlapping crowns, three low shrubs, two restrained tall grass tufts, and a small uneven patch of darker earth under the canopy. Tallest trees toward the back-left, shorter bushes toward the front-right, with a tapered open approach toward the playable field. No path inside this module."
+    },
+    {
+      "id": "forest_02",
+      "folder": "forest",
+      "size": "large",
+      "tiles": [
+        6,
+        6
+      ],
+      "name": "Лісовий кластер 2",
+      "subject": "Large upper-right woodland cluster: four different-sized broadleaf trees in an irregular loose arc, five low shrubs in asymmetrical positions, three grass tufts, subtle dark ground under canopies. More shrubs and lighter gaps than forest 1, no rocks. Highest trees toward the back-right, low bushes taper toward front-left. A distinctly different arrangement rather than a mirrored copy.",
+      "file": "forest/forest_02.png",
+      "prompt": "Use case: stylized-concept.\nAsset type: one production-ready transparent PNG environment sprite for a 2D isometric village-building game in Godot.\nStyle: match the supplied Clash of Clans screenshot as a visual reference only: charming stylized mobile-strategy 3D painted sprites, rounded leafy canopies made of chunky readable leaf masses, natural lime/olive green highlights, deep green shaded foliage, warm brown trunks, warm gray stones. Broad readable forms that hold up when scaled down, modest surface detail. Match the elevated orthographic isometric view of the reference, camera looking down around 40 degrees, ground footprint projected with width-to-height roughly 4:3. Top-left daylight, compact soft shadows toward bottom-right.\nBackdrop: genuine transparent alpha outside the sprite. The asset sits flush on ground, never on a thick diamond tile, floating island, cutaway earth slab or pedestal. Ground patches, if requested, are thin, irregular and taper softly into transparency, no straight geometric boundary. Center the complete sprite with ample transparent padding and keep every branch, leaf, shadow and ground patch inside the frame.\nConstraints: exactly one cohesive standalone sprite, no multiple separated variants, no sprite sheet, no labels, no letters, no watermark, no buildings, no game UI, no characters, no props outside the requested vegetation/rocks/shore/path. Asymmetric organic arrangement, no rectangular borders.\nSubject: Large upper-right woodland cluster: four different-sized broadleaf trees in an irregular loose arc, five low shrubs in asymmetrical positions, three grass tufts, subtle dark ground under canopies. More shrubs and lighter gaps than forest 1, no rocks. Highest trees toward the back-right, low bushes taper toward front-left. A distinctly different arrangement rather than a mirrored copy."
+    },
+    {
+      "id": "forest_03",
+      "folder": "forest",
+      "size": "large",
+      "tiles": [
+        7,
+        6
+      ],
+      "name": "Лісовий кластер 3",
+      "subject": "Large lush woodland for the lower-right far background: seven broadleaf trees of varied height, four shrubs and two tall grass tufts. Dense asymmetrical overlapping green crowns with a few visible warm brown trunk bases and little dark earth beneath. Dense far side at right, low open grass-and-shrub edge at left. No water.",
+      "file": "forest/forest_03.png",
+      "prompt": "Use case: stylized-concept.\nAsset type: one production-ready transparent PNG environment sprite for a 2D isometric village-building game in Godot.\nStyle: match the supplied Clash of Clans screenshot as a visual reference only: charming stylized mobile-strategy 3D painted sprites, rounded leafy canopies made of chunky readable leaf masses, natural lime/olive green highlights, deep green shaded foliage, warm brown trunks, warm gray stones. Broad readable forms that hold up when scaled down, modest surface detail. Match the elevated orthographic isometric view of the reference, camera looking down around 40 degrees, ground footprint projected with width-to-height roughly 4:3. Top-left daylight, compact soft shadows toward bottom-right.\nBackdrop: genuine transparent alpha outside the sprite. The asset sits flush on ground, never on a thick diamond tile, floating island, cutaway earth slab or pedestal. Ground patches, if requested, are thin, irregular and taper softly into transparency, no straight geometric boundary. Center the complete sprite with ample transparent padding and keep every branch, leaf, shadow and ground patch inside the frame.\nConstraints: exactly one cohesive standalone sprite, no multiple separated variants, no sprite sheet, no labels, no letters, no watermark, no buildings, no game UI, no characters, no props outside the requested vegetation/rocks/shore/path. Asymmetric organic arrangement, no rectangular borders.\nSubject: Large lush woodland for the lower-right far background: seven broadleaf trees of varied height, four shrubs and two tall grass tufts. Dense asymmetrical overlapping green crowns with a few visible warm brown trunk bases and little dark earth beneath. Dense far side at right, low open grass-and-shrub edge at left. No water."
+    },
+    {
+      "id": "bush_cluster_01",
+      "folder": "bush_clusters",
+      "size": "small",
+      "tiles": [
+        3,
+        3
+      ],
+      "name": "Кущовий кластер 1",
+      "subject": "Small soft transition cluster: three dense rounded leafy green bushes of varied size, two tall grass tufts, just a few tiny weeds on a very thin irregular patch of light wild grass. No trees and no rocks. Low silhouette, loose asymmetrical grouping, airy edge toward the field.",
+      "file": "bush_clusters/bush_cluster_01.png",
+      "prompt": "Use case: stylized-concept.\nAsset type: one production-ready transparent PNG environment sprite for a 2D isometric village-building game in Godot.\nStyle: match the supplied Clash of Clans screenshot as a visual reference only: charming stylized mobile-strategy 3D painted sprites, rounded leafy canopies made of chunky readable leaf masses, natural lime/olive green highlights, deep green shaded foliage, warm brown trunks, warm gray stones. Broad readable forms that hold up when scaled down, modest surface detail. Match the elevated orthographic isometric view of the reference, camera looking down around 40 degrees, ground footprint projected with width-to-height roughly 4:3. Top-left daylight, compact soft shadows toward bottom-right.\nBackdrop: genuine transparent alpha outside the sprite. The asset sits flush on ground, never on a thick diamond tile, floating island, cutaway earth slab or pedestal. Ground patches, if requested, are thin, irregular and taper softly into transparency, no straight geometric boundary. Center the complete sprite with ample transparent padding and keep every branch, leaf, shadow and ground patch inside the frame.\nConstraints: exactly one cohesive standalone sprite, no multiple separated variants, no sprite sheet, no labels, no letters, no watermark, no buildings, no game UI, no characters, no props outside the requested vegetation/rocks/shore/path. Asymmetric organic arrangement, no rectangular borders.\nSubject: Small soft transition cluster: three dense rounded leafy green bushes of varied size, two tall grass tufts, just a few tiny weeds on a very thin irregular patch of light wild grass. No trees and no rocks. Low silhouette, loose asymmetrical grouping, airy edge toward the field."
+    },
+    {
+      "id": "bush_cluster_02",
+      "folder": "bush_clusters",
+      "size": "medium",
+      "tiles": [
+        4,
+        4
+      ],
+      "name": "Кущовий кластер 2",
+      "subject": "Medium bush transition cluster: five leafy shrubs in a curved asymmetrical grouping, three tall grass tufts and sparse weeds, with natural gaps between lobed masses. No large trees and no rocks. A tiny flat wild-grass patch fading into transparency. Long low horizontal silhouette with one larger shrub to the left.",
+      "file": "bush_clusters/bush_cluster_02.png",
+      "prompt": "Use case: stylized-concept.\nAsset type: one production-ready transparent PNG environment sprite for a 2D isometric village-building game in Godot.\nStyle: match the supplied Clash of Clans screenshot as a visual reference only: charming stylized mobile-strategy 3D painted sprites, rounded leafy canopies made of chunky readable leaf masses, natural lime/olive green highlights, deep green shaded foliage, warm brown trunks, warm gray stones. Broad readable forms that hold up when scaled down, modest surface detail. Match the elevated orthographic isometric view of the reference, camera looking down around 40 degrees, ground footprint projected with width-to-height roughly 4:3. Top-left daylight, compact soft shadows toward bottom-right.\nBackdrop: genuine transparent alpha outside the sprite. The asset sits flush on ground, never on a thick diamond tile, floating island, cutaway earth slab or pedestal. Ground patches, if requested, are thin, irregular and taper softly into transparency, no straight geometric boundary. Center the complete sprite with ample transparent padding and keep every branch, leaf, shadow and ground patch inside the frame.\nConstraints: exactly one cohesive standalone sprite, no multiple separated variants, no sprite sheet, no labels, no letters, no watermark, no buildings, no game UI, no characters, no props outside the requested vegetation/rocks/shore/path. Asymmetric organic arrangement, no rectangular borders.\nSubject: Medium bush transition cluster: five leafy shrubs in a curved asymmetrical grouping, three tall grass tufts and sparse weeds, with natural gaps between lobed masses. No large trees and no rocks. A tiny flat wild-grass patch fading into transparency. Long low horizontal silhouette with one larger shrub to the left."
+    },
+    {
+      "id": "bush_cluster_03",
+      "folder": "bush_clusters",
+      "size": "medium",
+      "tiles": [
+        5,
+        4
+      ],
+      "name": "Кущовий кластер 3",
+      "subject": "Medium dense bush connector cluster: six broadleaf low shrubs of different sizes, two narrow tall-grass clumps and a few weeds. Irregular crescent shape, largest shrubs at rear-center and scattered smaller ones at both ends. Lighter grasses at the front. No trees, no stones. Thin patch edges blend softly into transparency.",
+      "file": "bush_clusters/bush_cluster_03.png",
+      "prompt": "Use case: stylized-concept.\nAsset type: one production-ready transparent PNG environment sprite for a 2D isometric village-building game in Godot.\nStyle: match the supplied Clash of Clans screenshot as a visual reference only: charming stylized mobile-strategy 3D painted sprites, rounded leafy canopies made of chunky readable leaf masses, natural lime/olive green highlights, deep green shaded foliage, warm brown trunks, warm gray stones. Broad readable forms that hold up when scaled down, modest surface detail. Match the elevated orthographic isometric view of the reference, camera looking down around 40 degrees, ground footprint projected with width-to-height roughly 4:3. Top-left daylight, compact soft shadows toward bottom-right.\nBackdrop: genuine transparent alpha outside the sprite. The asset sits flush on ground, never on a thick diamond tile, floating island, cutaway earth slab or pedestal. Ground patches, if requested, are thin, irregular and taper softly into transparency, no straight geometric boundary. Center the complete sprite with ample transparent padding and keep every branch, leaf, shadow and ground patch inside the frame.\nConstraints: exactly one cohesive standalone sprite, no multiple separated variants, no sprite sheet, no labels, no letters, no watermark, no buildings, no game UI, no characters, no props outside the requested vegetation/rocks/shore/path. Asymmetric organic arrangement, no rectangular borders.\nSubject: Medium dense bush connector cluster: six broadleaf low shrubs of different sizes, two narrow tall-grass clumps and a few weeds. Irregular crescent shape, largest shrubs at rear-center and scattered smaller ones at both ends. Lighter grasses at the front. No trees, no stones. Thin patch edges blend softly into transparency."
+    },
+    {
+      "id": "stone_cluster_01",
+      "folder": "stone_clusters",
+      "size": "medium",
+      "tiles": [
+        4,
+        4
+      ],
+      "name": "Кам’яний кластер 1",
+      "subject": "Medium rocky environment cluster: four rounded angular warm-gray boulders, one larger and three medium, five small scattered stones and two restrained grass tufts between rocks. Asymmetric arrangement on a minimal flush brown-green ground patch. No trees, no bushes, no water.",
+      "file": "stone_clusters/stone_cluster_01.png",
+      "prompt": "Use case: stylized-concept.\nAsset type: one production-ready transparent PNG environment sprite for a 2D isometric village-building game in Godot.\nStyle: match the supplied Clash of Clans screenshot as a visual reference only: charming stylized mobile-strategy 3D painted sprites, rounded leafy canopies made of chunky readable leaf masses, natural lime/olive green highlights, deep green shaded foliage, warm brown trunks, warm gray stones. Broad readable forms that hold up when scaled down, modest surface detail. Match the elevated orthographic isometric view of the reference, camera looking down around 40 degrees, ground footprint projected with width-to-height roughly 4:3. Top-left daylight, compact soft shadows toward bottom-right.\nBackdrop: genuine transparent alpha outside the sprite. The asset sits flush on ground, never on a thick diamond tile, floating island, cutaway earth slab or pedestal. Ground patches, if requested, are thin, irregular and taper softly into transparency, no straight geometric boundary. Center the complete sprite with ample transparent padding and keep every branch, leaf, shadow and ground patch inside the frame.\nConstraints: exactly one cohesive standalone sprite, no multiple separated variants, no sprite sheet, no labels, no letters, no watermark, no buildings, no game UI, no characters, no props outside the requested vegetation/rocks/shore/path. Asymmetric organic arrangement, no rectangular borders.\nSubject: Medium rocky environment cluster: four rounded angular warm-gray boulders, one larger and three medium, five small scattered stones and two restrained grass tufts between rocks. Asymmetric arrangement on a minimal flush brown-green ground patch. No trees, no bushes, no water."
+    },
+    {
+      "id": "stone_cluster_02",
+      "folder": "stone_clusters",
+      "size": "medium",
+      "tiles": [
+        5,
+        4
+      ],
+      "name": "Кам’яний кластер 2",
+      "subject": "Medium shore-adjacent rocky cluster: six varied warm-gray granite boulders with softly faceted shapes, a few small pebbles, three thin grass tufts between stones, a little warm tan damp earth. Largest rock off-center on the right and a loose tapered tail of small stones to the left. No water in this module, no trees.",
+      "file": "stone_clusters/stone_cluster_02.png",
+      "prompt": "Use case: stylized-concept.\nAsset type: one production-ready transparent PNG environment sprite for a 2D isometric village-building game in Godot.\nStyle: match the supplied Clash of Clans screenshot as a visual reference only: charming stylized mobile-strategy 3D painted sprites, rounded leafy canopies made of chunky readable leaf masses, natural lime/olive green highlights, deep green shaded foliage, warm brown trunks, warm gray stones. Broad readable forms that hold up when scaled down, modest surface detail. Match the elevated orthographic isometric view of the reference, camera looking down around 40 degrees, ground footprint projected with width-to-height roughly 4:3. Top-left daylight, compact soft shadows toward bottom-right.\nBackdrop: genuine transparent alpha outside the sprite. The asset sits flush on ground, never on a thick diamond tile, floating island, cutaway earth slab or pedestal. Ground patches, if requested, are thin, irregular and taper softly into transparency, no straight geometric boundary. Center the complete sprite with ample transparent padding and keep every branch, leaf, shadow and ground patch inside the frame.\nConstraints: exactly one cohesive standalone sprite, no multiple separated variants, no sprite sheet, no labels, no letters, no watermark, no buildings, no game UI, no characters, no props outside the requested vegetation/rocks/shore/path. Asymmetric organic arrangement, no rectangular borders.\nSubject: Medium shore-adjacent rocky cluster: six varied warm-gray granite boulders with softly faceted shapes, a few small pebbles, three thin grass tufts between stones, a little warm tan damp earth. Largest rock off-center on the right and a loose tapered tail of small stones to the left. No water in this module, no trees."
+    },
+    {
+      "id": "shore_01",
+      "folder": "shore",
+      "size": "large",
+      "tiles": [
+        7,
+        6
+      ],
+      "name": "Береговий кластер 1",
+      "subject": "Large lower-left coastal module as a flat environment cutout: shallow calm teal-blue water occupying the bottom-left side; an irregular narrow warm tan sandy shore running diagonally from upper-left to lower-right; five rounded warm-gray shore boulders straddling the wet sand; two sparse green shrubs on the landward upper-right side and two restrained grass tufts. Narrow cream foam at waterline. Landward edge dissolves irregularly into transparency, outer water edge has a natural uneven gently feathered boundary for overlap with another coastal module. No thick platform, no cliff wall, no raised island. Readable shore with water in front-left and vegetation behind-right.",
+      "file": "shore/shore_01.png",
+      "prompt": "Use case: stylized-concept.\nAsset type: one production-ready transparent PNG environment sprite for a 2D isometric village-building game in Godot.\nStyle: match the supplied Clash of Clans screenshot as a visual reference only: charming stylized mobile-strategy 3D painted sprites, rounded leafy canopies made of chunky readable leaf masses, natural lime/olive green highlights, deep green shaded foliage, warm brown trunks, warm gray stones. Broad readable forms that hold up when scaled down, modest surface detail. Match the elevated orthographic isometric view of the reference, camera looking down around 40 degrees, ground footprint projected with width-to-height roughly 4:3. Top-left daylight, compact soft shadows toward bottom-right.\nBackdrop: genuine transparent alpha outside the sprite. The asset sits flush on ground, never on a thick diamond tile, floating island, cutaway earth slab or pedestal. Ground patches, if requested, are thin, irregular and taper softly into transparency, no straight geometric boundary. Center the complete sprite with ample transparent padding and keep every branch, leaf, shadow and ground patch inside the frame.\nConstraints: exactly one cohesive standalone sprite, no multiple separated variants, no sprite sheet, no labels, no letters, no watermark, no buildings, no game UI, no characters, no props outside the requested vegetation/rocks/shore/path. Asymmetric organic arrangement, no rectangular borders.\nSubject: Large lower-left coastal module as a flat environment cutout: shallow calm teal-blue water occupying the bottom-left side; an irregular narrow warm tan sandy shore running diagonally from upper-left to lower-right; five rounded warm-gray shore boulders straddling the wet sand; two sparse green shrubs on the landward upper-right side and two restrained grass tufts. Narrow cream foam at waterline. Landward edge dissolves irregularly into transparency, outer water edge has a natural uneven gently feathered boundary for overlap with another coastal module. No thick platform, no cliff wall, no raised island. Readable shore with water in front-left and vegetation behind-right."
+    },
+    {
+      "id": "shore_02",
+      "folder": "shore",
+      "size": "medium",
+      "tiles": [
+        5,
+        5
+      ],
+      "name": "Береговий кластер 2",
+      "subject": "Medium distinct coastal continuation module: shallow muted teal water toward bottom-left, an uneven curved sandy inlet with warm damp brown ground at waterline, three large warm-gray rounded stones, small scattered pebbles, one sparse low green shrub and two groups of thin reeds on the landward upper-right. Tiny quiet foam highlights. Flat flush environment cutout with no cliff and no tile slab, softly irregular alpha edges suitable for overlapping shore 1. No palm trees, no props.",
+      "file": "shore/shore_02.png",
+      "prompt": "Use case: stylized-concept.\nAsset type: one production-ready transparent PNG environment sprite for a 2D isometric village-building game in Godot.\nStyle: match the supplied Clash of Clans screenshot as a visual reference only: charming stylized mobile-strategy 3D painted sprites, rounded leafy canopies made of chunky readable leaf masses, natural lime/olive green highlights, deep green shaded foliage, warm brown trunks, warm gray stones. Broad readable forms that hold up when scaled down, modest surface detail. Match the elevated orthographic isometric view of the reference, camera looking down around 40 degrees, ground footprint projected with width-to-height roughly 4:3. Top-left daylight, compact soft shadows toward bottom-right.\nBackdrop: genuine transparent alpha outside the sprite. The asset sits flush on ground, never on a thick diamond tile, floating island, cutaway earth slab or pedestal. Ground patches, if requested, are thin, irregular and taper softly into transparency, no straight geometric boundary. Center the complete sprite with ample transparent padding and keep every branch, leaf, shadow and ground patch inside the frame.\nConstraints: exactly one cohesive standalone sprite, no multiple separated variants, no sprite sheet, no labels, no letters, no watermark, no buildings, no game UI, no characters, no props outside the requested vegetation/rocks/shore/path. Asymmetric organic arrangement, no rectangular borders.\nSubject: Medium distinct coastal continuation module: shallow muted teal water toward bottom-left, an uneven curved sandy inlet with warm damp brown ground at waterline, three large warm-gray rounded stones, small scattered pebbles, one sparse low green shrub and two groups of thin reeds on the landward upper-right. Tiny quiet foam highlights. Flat flush environment cutout with no cliff and no tile slab, softly irregular alpha edges suitable for overlapping shore 1. No palm trees, no props."
+    },
+    {
+      "id": "path_01",
+      "folder": "paths",
+      "size": "medium",
+      "tiles": [
+        5,
+        3
+      ],
+      "name": "Стежка 1",
+      "subject": "One narrow gently curving worn warm-tan earth path fragment for an upper corner: ground projected diagonally from lower-left to upper-right with perspective width-to-height roughly 4:3. Low flattened light-green wild grass along ragged margins, two small shrubs and a few weeds beside the path. Both ends taper irregularly into transparency to blend with another fragment. Thin flat ground cutout, no raised base, no trees, no stones, no signposts.",
+      "file": "paths/path_01.png",
+      "prompt": "Use case: stylized-concept.\nAsset type: one production-ready transparent PNG environment sprite for a 2D isometric village-building game in Godot.\nStyle: match the supplied Clash of Clans screenshot as a visual reference only: charming stylized mobile-strategy 3D painted sprites, rounded leafy canopies made of chunky readable leaf masses, natural lime/olive green highlights, deep green shaded foliage, warm brown trunks, warm gray stones. Broad readable forms that hold up when scaled down, modest surface detail. Match the elevated orthographic isometric view of the reference, camera looking down around 40 degrees, ground footprint projected with width-to-height roughly 4:3. Top-left daylight, compact soft shadows toward bottom-right.\nBackdrop: genuine transparent alpha outside the sprite. The asset sits flush on ground, never on a thick diamond tile, floating island, cutaway earth slab or pedestal. Ground patches, if requested, are thin, irregular and taper softly into transparency, no straight geometric boundary. Center the complete sprite with ample transparent padding and keep every branch, leaf, shadow and ground patch inside the frame.\nConstraints: exactly one cohesive standalone sprite, no multiple separated variants, no sprite sheet, no labels, no letters, no watermark, no buildings, no game UI, no characters, no props outside the requested vegetation/rocks/shore/path. Asymmetric organic arrangement, no rectangular borders.\nSubject: One narrow gently curving worn warm-tan earth path fragment for an upper corner: ground projected diagonally from lower-left to upper-right with perspective width-to-height roughly 4:3. Low flattened light-green wild grass along ragged margins, two small shrubs and a few weeds beside the path. Both ends taper irregularly into transparency to blend with another fragment. Thin flat ground cutout, no raised base, no trees, no stones, no signposts."
+    },
+    {
+      "id": "path_02",
+      "folder": "paths",
+      "size": "medium",
+      "tiles": [
+        5,
+        3
+      ],
+      "name": "Стежка 2",
+      "subject": "One distinct narrow gently bent dirt path fragment oriented diagonally from upper-left to lower-right, with a small widening at one bend, warm tan trampled soil, broken uneven patches of flattened wild grass, three tiny green shrubs spaced unequally along the sides and very sparse weeds. Open tapering ends and irregular softly fading alpha margins. Flush on ground, no raised base, no trees or props.",
+      "file": "paths/path_02.png",
+      "prompt": "Use case: stylized-concept.\nAsset type: one production-ready transparent PNG environment sprite for a 2D isometric village-building game in Godot.\nStyle: match the supplied Clash of Clans screenshot as a visual reference only: charming stylized mobile-strategy 3D painted sprites, rounded leafy canopies made of chunky readable leaf masses, natural lime/olive green highlights, deep green shaded foliage, warm brown trunks, warm gray stones. Broad readable forms that hold up when scaled down, modest surface detail. Match the elevated orthographic isometric view of the reference, camera looking down around 40 degrees, ground footprint projected with width-to-height roughly 4:3. Top-left daylight, compact soft shadows toward bottom-right.\nBackdrop: genuine transparent alpha outside the sprite. The asset sits flush on ground, never on a thick diamond tile, floating island, cutaway earth slab or pedestal. Ground patches, if requested, are thin, irregular and taper softly into transparency, no straight geometric boundary. Center the complete sprite with ample transparent padding and keep every branch, leaf, shadow and ground patch inside the frame.\nConstraints: exactly one cohesive standalone sprite, no multiple separated variants, no sprite sheet, no labels, no letters, no watermark, no buildings, no game UI, no characters, no props outside the requested vegetation/rocks/shore/path. Asymmetric organic arrangement, no rectangular borders.\nSubject: One distinct narrow gently bent dirt path fragment oriented diagonally from upper-left to lower-right, with a small widening at one bend, warm tan trampled soil, broken uneven patches of flattened wild grass, three tiny green shrubs spaced unequally along the sides and very sparse weeds. Open tapering ends and irregular softly fading alpha margins. Flush on ground, no raised base, no trees or props."
+    },
+    {
+      "id": "tree_01",
+      "folder": "trees",
+      "size": "small",
+      "tiles": [
+        2,
+        2
+      ],
+      "name": "Дерево 1",
+      "subject": "One standalone mature broadleaf tree: large round asymmetrical green crown with chunky interlocking leaf masses, short visible warm brown trunk, compact contact shadow and only a few grass blades at the root. No broad ground patch, no other trees, no bushes.",
+      "file": "trees/tree_01.png",
+      "prompt": "Use case: stylized-concept.\nAsset type: one production-ready transparent PNG environment sprite for a 2D isometric village-building game in Godot.\nStyle: match the supplied Clash of Clans screenshot as a visual reference only: charming stylized mobile-strategy 3D painted sprites, rounded leafy canopies made of chunky readable leaf masses, natural lime/olive green highlights, deep green shaded foliage, warm brown trunks, warm gray stones. Broad readable forms that hold up when scaled down, modest surface detail. Match the elevated orthographic isometric view of the reference, camera looking down around 40 degrees, ground footprint projected with width-to-height roughly 4:3. Top-left daylight, compact soft shadows toward bottom-right.\nBackdrop: genuine transparent alpha outside the sprite. The asset sits flush on ground, never on a thick diamond tile, floating island, cutaway earth slab or pedestal. Ground patches, if requested, are thin, irregular and taper softly into transparency, no straight geometric boundary. Center the complete sprite with ample transparent padding and keep every branch, leaf, shadow and ground patch inside the frame.\nConstraints: exactly one cohesive standalone sprite, no multiple separated variants, no sprite sheet, no labels, no letters, no watermark, no buildings, no game UI, no characters, no props outside the requested vegetation/rocks/shore/path. Asymmetric organic arrangement, no rectangular borders.\nSubject: One standalone mature broadleaf tree: large round asymmetrical green crown with chunky interlocking leaf masses, short visible warm brown trunk, compact contact shadow and only a few grass blades at the root. No broad ground patch, no other trees, no bushes."
+    },
+    {
+      "id": "tree_02",
+      "folder": "trees",
+      "size": "small",
+      "tiles": [
+        2,
+        2
+      ],
+      "name": "Дерево 2",
+      "subject": "One standalone medium broadleaf tree: oval layered olive-lime canopy leaning subtly to the right, shorter brown branching trunk, darker foliage beneath and top-left highlights, tiny root-level grass and compact soft contact shadow. Different silhouette from a round oak. No other trees, no shrub cluster, no broad ground patch.",
+      "file": "trees/tree_02.png",
+      "prompt": "Use case: stylized-concept.\nAsset type: one production-ready transparent PNG environment sprite for a 2D isometric village-building game in Godot.\nStyle: match the supplied Clash of Clans screenshot as a visual reference only: charming stylized mobile-strategy 3D painted sprites, rounded leafy canopies made of chunky readable leaf masses, natural lime/olive green highlights, deep green shaded foliage, warm brown trunks, warm gray stones. Broad readable forms that hold up when scaled down, modest surface detail. Match the elevated orthographic isometric view of the reference, camera looking down around 40 degrees, ground footprint projected with width-to-height roughly 4:3. Top-left daylight, compact soft shadows toward bottom-right.\nBackdrop: genuine transparent alpha outside the sprite. The asset sits flush on ground, never on a thick diamond tile, floating island, cutaway earth slab or pedestal. Ground patches, if requested, are thin, irregular and taper softly into transparency, no straight geometric boundary. Center the complete sprite with ample transparent padding and keep every branch, leaf, shadow and ground patch inside the frame.\nConstraints: exactly one cohesive standalone sprite, no multiple separated variants, no sprite sheet, no labels, no letters, no watermark, no buildings, no game UI, no characters, no props outside the requested vegetation/rocks/shore/path. Asymmetric organic arrangement, no rectangular borders.\nSubject: One standalone medium broadleaf tree: oval layered olive-lime canopy leaning subtly to the right, shorter brown branching trunk, darker foliage beneath and top-left highlights, tiny root-level grass and compact soft contact shadow. Different silhouette from a round oak. No other trees, no shrub cluster, no broad ground patch."
+    },
+    {
+      "id": "tree_03",
+      "folder": "trees",
+      "size": "small",
+      "tiles": [
+        2,
+        2
+      ],
+      "name": "Дерево 3",
+      "subject": "One standalone small young broadleaf tree: upright slender warm brown trunk and three irregular rounded foliage lobes, bright lime-olive top leaves with deep green undersides. A clearly smaller lighter silhouette, few grass blades at the base and a compact contact shadow. No extra trees, no broad soil patch.",
+      "file": "trees/tree_03.png",
+      "prompt": "Use case: stylized-concept.\nAsset type: one production-ready transparent PNG environment sprite for a 2D isometric village-building game in Godot.\nStyle: match the supplied Clash of Clans screenshot as a visual reference only: charming stylized mobile-strategy 3D painted sprites, rounded leafy canopies made of chunky readable leaf masses, natural lime/olive green highlights, deep green shaded foliage, warm brown trunks, warm gray stones. Broad readable forms that hold up when scaled down, modest surface detail. Match the elevated orthographic isometric view of the reference, camera looking down around 40 degrees, ground footprint projected with width-to-height roughly 4:3. Top-left daylight, compact soft shadows toward bottom-right.\nBackdrop: genuine transparent alpha outside the sprite. The asset sits flush on ground, never on a thick diamond tile, floating island, cutaway earth slab or pedestal. Ground patches, if requested, are thin, irregular and taper softly into transparency, no straight geometric boundary. Center the complete sprite with ample transparent padding and keep every branch, leaf, shadow and ground patch inside the frame.\nConstraints: exactly one cohesive standalone sprite, no multiple separated variants, no sprite sheet, no labels, no letters, no watermark, no buildings, no game UI, no characters, no props outside the requested vegetation/rocks/shore/path. Asymmetric organic arrangement, no rectangular borders.\nSubject: One standalone small young broadleaf tree: upright slender warm brown trunk and three irregular rounded foliage lobes, bright lime-olive top leaves with deep green undersides. A clearly smaller lighter silhouette, few grass blades at the base and a compact contact shadow. No extra trees, no broad soil patch."
+    },
+    {
+      "id": "tree_04",
+      "folder": "trees",
+      "size": "small",
+      "tiles": [
+        3,
+        3
+      ],
+      "name": "Дерево 4",
+      "subject": "One standalone broad spreading broadleaf tree: squat sturdy branching brown trunk with a low wide irregular multi-lobed leafy crown, darker olive-green dense leaves, soft lime upper-left highlights. Wider silhouette than other trees. Tiny grass at roots and compact contact shadow only. No rocks, no additional tree, no ground island.",
+      "file": "trees/tree_04.png",
+      "prompt": "Use case: stylized-concept.\nAsset type: one production-ready transparent PNG environment sprite for a 2D isometric village-building game in Godot.\nStyle: match the supplied Clash of Clans screenshot as a visual reference only: charming stylized mobile-strategy 3D painted sprites, rounded leafy canopies made of chunky readable leaf masses, natural lime/olive green highlights, deep green shaded foliage, warm brown trunks, warm gray stones. Broad readable forms that hold up when scaled down, modest surface detail. Match the elevated orthographic isometric view of the reference, camera looking down around 40 degrees, ground footprint projected with width-to-height roughly 4:3. Top-left daylight, compact soft shadows toward bottom-right.\nBackdrop: genuine transparent alpha outside the sprite. The asset sits flush on ground, never on a thick diamond tile, floating island, cutaway earth slab or pedestal. Ground patches, if requested, are thin, irregular and taper softly into transparency, no straight geometric boundary. Center the complete sprite with ample transparent padding and keep every branch, leaf, shadow and ground patch inside the frame.\nConstraints: exactly one cohesive standalone sprite, no multiple separated variants, no sprite sheet, no labels, no letters, no watermark, no buildings, no game UI, no characters, no props outside the requested vegetation/rocks/shore/path. Asymmetric organic arrangement, no rectangular borders.\nSubject: One standalone broad spreading broadleaf tree: squat sturdy branching brown trunk with a low wide irregular multi-lobed leafy crown, darker olive-green dense leaves, soft lime upper-left highlights. Wider silhouette than other trees. Tiny grass at roots and compact contact shadow only. No rocks, no additional tree, no ground island."
+    },
+    {
+      "id": "bush_01",
+      "folder": "bushes",
+      "size": "small",
+      "tiles": [
+        2,
+        2
+      ],
+      "name": "Кущ 1",
+      "subject": "One standalone small rounded leafy bush: compact low dome of chunky olive-lime leaves with dark green underside and a tiny soft contact shadow. No tree, no flowers, no broad ground patch.",
+      "file": "bushes/bush_01.png",
+      "prompt": "Use case: stylized-concept.\nAsset type: one production-ready transparent PNG environment sprite for a 2D isometric village-building game in Godot.\nStyle: match the supplied Clash of Clans screenshot as a visual reference only: charming stylized mobile-strategy 3D painted sprites, rounded leafy canopies made of chunky readable leaf masses, natural lime/olive green highlights, deep green shaded foliage, warm brown trunks, warm gray stones. Broad readable forms that hold up when scaled down, modest surface detail. Match the elevated orthographic isometric view of the reference, camera looking down around 40 degrees, ground footprint projected with width-to-height roughly 4:3. Top-left daylight, compact soft shadows toward bottom-right.\nBackdrop: genuine transparent alpha outside the sprite. The asset sits flush on ground, never on a thick diamond tile, floating island, cutaway earth slab or pedestal. Ground patches, if requested, are thin, irregular and taper softly into transparency, no straight geometric boundary. Center the complete sprite with ample transparent padding and keep every branch, leaf, shadow and ground patch inside the frame.\nConstraints: exactly one cohesive standalone sprite, no multiple separated variants, no sprite sheet, no labels, no letters, no watermark, no buildings, no game UI, no characters, no props outside the requested vegetation/rocks/shore/path. Asymmetric organic arrangement, no rectangular borders.\nSubject: One standalone small rounded leafy bush: compact low dome of chunky olive-lime leaves with dark green underside and a tiny soft contact shadow. No tree, no flowers, no broad ground patch."
+    },
+    {
+      "id": "bush_02",
+      "folder": "bushes",
+      "size": "small",
+      "tiles": [
+        2,
+        2
+      ],
+      "name": "Кущ 2",
+      "subject": "One standalone asymmetrical leafy bush: low wide three-lobed shape, largest lobe offset left, dark olive-green base and light lime leaf tips. Small contact shadow, no flowers, no tree, no broad ground patch.",
+      "file": "bushes/bush_02.png",
+      "prompt": "Use case: stylized-concept.\nAsset type: one production-ready transparent PNG environment sprite for a 2D isometric village-building game in Godot.\nStyle: match the supplied Clash of Clans screenshot as a visual reference only: charming stylized mobile-strategy 3D painted sprites, rounded leafy canopies made of chunky readable leaf masses, natural lime/olive green highlights, deep green shaded foliage, warm brown trunks, warm gray stones. Broad readable forms that hold up when scaled down, modest surface detail. Match the elevated orthographic isometric view of the reference, camera looking down around 40 degrees, ground footprint projected with width-to-height roughly 4:3. Top-left daylight, compact soft shadows toward bottom-right.\nBackdrop: genuine transparent alpha outside the sprite. The asset sits flush on ground, never on a thick diamond tile, floating island, cutaway earth slab or pedestal. Ground patches, if requested, are thin, irregular and taper softly into transparency, no straight geometric boundary. Center the complete sprite with ample transparent padding and keep every branch, leaf, shadow and ground patch inside the frame.\nConstraints: exactly one cohesive standalone sprite, no multiple separated variants, no sprite sheet, no labels, no letters, no watermark, no buildings, no game UI, no characters, no props outside the requested vegetation/rocks/shore/path. Asymmetric organic arrangement, no rectangular borders.\nSubject: One standalone asymmetrical leafy bush: low wide three-lobed shape, largest lobe offset left, dark olive-green base and light lime leaf tips. Small contact shadow, no flowers, no tree, no broad ground patch."
+    },
+    {
+      "id": "bush_03",
+      "folder": "bushes",
+      "size": "small",
+      "tiles": [
+        2,
+        2
+      ],
+      "name": "Кущ 3",
+      "subject": "One standalone sparse small shrub with a slightly taller uneven oval silhouette, visible short brown twigs near base, natural mid-green leafy lobes and top-left lime highlights. Tiny contact shadow, no flowers or stones, no broad ground patch.",
+      "file": "bushes/bush_03.png",
+      "prompt": "Use case: stylized-concept.\nAsset type: one production-ready transparent PNG environment sprite for a 2D isometric village-building game in Godot.\nStyle: match the supplied Clash of Clans screenshot as a visual reference only: charming stylized mobile-strategy 3D painted sprites, rounded leafy canopies made of chunky readable leaf masses, natural lime/olive green highlights, deep green shaded foliage, warm brown trunks, warm gray stones. Broad readable forms that hold up when scaled down, modest surface detail. Match the elevated orthographic isometric view of the reference, camera looking down around 40 degrees, ground footprint projected with width-to-height roughly 4:3. Top-left daylight, compact soft shadows toward bottom-right.\nBackdrop: genuine transparent alpha outside the sprite. The asset sits flush on ground, never on a thick diamond tile, floating island, cutaway earth slab or pedestal. Ground patches, if requested, are thin, irregular and taper softly into transparency, no straight geometric boundary. Center the complete sprite with ample transparent padding and keep every branch, leaf, shadow and ground patch inside the frame.\nConstraints: exactly one cohesive standalone sprite, no multiple separated variants, no sprite sheet, no labels, no letters, no watermark, no buildings, no game UI, no characters, no props outside the requested vegetation/rocks/shore/path. Asymmetric organic arrangement, no rectangular borders.\nSubject: One standalone sparse small shrub with a slightly taller uneven oval silhouette, visible short brown twigs near base, natural mid-green leafy lobes and top-left lime highlights. Tiny contact shadow, no flowers or stones, no broad ground patch."
+    },
+    {
+      "id": "bush_04",
+      "folder": "bushes",
+      "size": "small",
+      "tiles": [
+        2,
+        2
+      ],
+      "name": "Кущ 4",
+      "subject": "One standalone squat dense spreading leafy bush, four low irregular lumpy foliage lobes, slightly yellow-green tips and dark green shadow under leaves, wider than tall. Tiny grass at base and short contact shadow. No tree or broad ground patch.",
+      "file": "bushes/bush_04.png",
+      "prompt": "Use case: stylized-concept.\nAsset type: one production-ready transparent PNG environment sprite for a 2D isometric village-building game in Godot.\nStyle: match the supplied Clash of Clans screenshot as a visual reference only: charming stylized mobile-strategy 3D painted sprites, rounded leafy canopies made of chunky readable leaf masses, natural lime/olive green highlights, deep green shaded foliage, warm brown trunks, warm gray stones. Broad readable forms that hold up when scaled down, modest surface detail. Match the elevated orthographic isometric view of the reference, camera looking down around 40 degrees, ground footprint projected with width-to-height roughly 4:3. Top-left daylight, compact soft shadows toward bottom-right.\nBackdrop: genuine transparent alpha outside the sprite. The asset sits flush on ground, never on a thick diamond tile, floating island, cutaway earth slab or pedestal. Ground patches, if requested, are thin, irregular and taper softly into transparency, no straight geometric boundary. Center the complete sprite with ample transparent padding and keep every branch, leaf, shadow and ground patch inside the frame.\nConstraints: exactly one cohesive standalone sprite, no multiple separated variants, no sprite sheet, no labels, no letters, no watermark, no buildings, no game UI, no characters, no props outside the requested vegetation/rocks/shore/path. Asymmetric organic arrangement, no rectangular borders.\nSubject: One standalone squat dense spreading leafy bush, four low irregular lumpy foliage lobes, slightly yellow-green tips and dark green shadow under leaves, wider than tall. Tiny grass at base and short contact shadow. No tree or broad ground patch."
+    },
+    {
+      "id": "tall_grass_01",
+      "folder": "grass",
+      "size": "small",
+      "tiles": [
+        2,
+        2
+      ],
+      "name": "Висока трава 1",
+      "subject": "One standalone group of three closely gathered tall-grass tufts with broad stylized blades, fresh lime-olive tips and darker olive bases, irregular heights and airy spaces between blades. Very low soft contact shadow, no bush, no tree, no flowers, no ground slab or broad earth patch.",
+      "file": "grass/tall_grass_01.png",
+      "prompt": "Use case: stylized-concept.\nAsset type: one production-ready transparent PNG environment sprite for a 2D isometric village-building game in Godot.\nStyle: match the supplied Clash of Clans screenshot as a visual reference only: charming stylized mobile-strategy 3D painted sprites, rounded leafy canopies made of chunky readable leaf masses, natural lime/olive green highlights, deep green shaded foliage, warm brown trunks, warm gray stones. Broad readable forms that hold up when scaled down, modest surface detail. Match the elevated orthographic isometric view of the reference, camera looking down around 40 degrees, ground footprint projected with width-to-height roughly 4:3. Top-left daylight, compact soft shadows toward bottom-right.\nBackdrop: genuine transparent alpha outside the sprite. The asset sits flush on ground, never on a thick diamond tile, floating island, cutaway earth slab or pedestal. Ground patches, if requested, are thin, irregular and taper softly into transparency, no straight geometric boundary. Center the complete sprite with ample transparent padding and keep every branch, leaf, shadow and ground patch inside the frame.\nConstraints: exactly one cohesive standalone sprite, no multiple separated variants, no sprite sheet, no labels, no letters, no watermark, no buildings, no game UI, no characters, no props outside the requested vegetation/rocks/shore/path. Asymmetric organic arrangement, no rectangular borders.\nSubject: One standalone group of three closely gathered tall-grass tufts with broad stylized blades, fresh lime-olive tips and darker olive bases, irregular heights and airy spaces between blades. Very low soft contact shadow, no bush, no tree, no flowers, no ground slab or broad earth patch."
+    },
+    {
+      "id": "tall_grass_02",
+      "folder": "grass",
+      "size": "small",
+      "tiles": [
+        3,
+        2
+      ],
+      "name": "Висока трава 2",
+      "subject": "One standalone low crescent-shaped patch of wild tall grass: five modest clumps of thin stylized green blades with uneven heights, slightly straw-green tips, a few low trampled blades at the edge. Irregular airy asymmetrical silhouette, no flowers, no bushes, no trees, no broad ground patch.",
+      "file": "grass/tall_grass_02.png",
+      "prompt": "Use case: stylized-concept.\nAsset type: one production-ready transparent PNG environment sprite for a 2D isometric village-building game in Godot.\nStyle: match the supplied Clash of Clans screenshot as a visual reference only: charming stylized mobile-strategy 3D painted sprites, rounded leafy canopies made of chunky readable leaf masses, natural lime/olive green highlights, deep green shaded foliage, warm brown trunks, warm gray stones. Broad readable forms that hold up when scaled down, modest surface detail. Match the elevated orthographic isometric view of the reference, camera looking down around 40 degrees, ground footprint projected with width-to-height roughly 4:3. Top-left daylight, compact soft shadows toward bottom-right.\nBackdrop: genuine transparent alpha outside the sprite. The asset sits flush on ground, never on a thick diamond tile, floating island, cutaway earth slab or pedestal. Ground patches, if requested, are thin, irregular and taper softly into transparency, no straight geometric boundary. Center the complete sprite with ample transparent padding and keep every branch, leaf, shadow and ground patch inside the frame.\nConstraints: exactly one cohesive standalone sprite, no multiple separated variants, no sprite sheet, no labels, no letters, no watermark, no buildings, no game UI, no characters, no props outside the requested vegetation/rocks/shore/path. Asymmetric organic arrangement, no rectangular borders.\nSubject: One standalone low crescent-shaped patch of wild tall grass: five modest clumps of thin stylized green blades with uneven heights, slightly straw-green tips, a few low trampled blades at the edge. Irregular airy asymmetrical silhouette, no flowers, no bushes, no trees, no broad ground patch."
+    },
+    {
+      "id": "tall_grass_03",
+      "folder": "grass",
+      "size": "small",
+      "tiles": [
+        2,
+        3
+      ],
+      "name": "Висока трава 3",
+      "subject": "One standalone sparse tall-grass group: two main upright blade tufts and one little side tuft, varied olive/lime-green blades bent in different directions, clean readable stylized shape, tiny contact shadow. No reed seedheads, no water, no flowers, no bushes, no broad ground patch.",
+      "file": "grass/tall_grass_03.png",
+      "prompt": "Use case: stylized-concept.\nAsset type: one production-ready transparent PNG environment sprite for a 2D isometric village-building game in Godot.\nStyle: match the supplied Clash of Clans screenshot as a visual reference only: charming stylized mobile-strategy 3D painted sprites, rounded leafy canopies made of chunky readable leaf masses, natural lime/olive green highlights, deep green shaded foliage, warm brown trunks, warm gray stones. Broad readable forms that hold up when scaled down, modest surface detail. Match the elevated orthographic isometric view of the reference, camera looking down around 40 degrees, ground footprint projected with width-to-height roughly 4:3. Top-left daylight, compact soft shadows toward bottom-right.\nBackdrop: genuine transparent alpha outside the sprite. The asset sits flush on ground, never on a thick diamond tile, floating island, cutaway earth slab or pedestal. Ground patches, if requested, are thin, irregular and taper softly into transparency, no straight geometric boundary. Center the complete sprite with ample transparent padding and keep every branch, leaf, shadow and ground patch inside the frame.\nConstraints: exactly one cohesive standalone sprite, no multiple separated variants, no sprite sheet, no labels, no letters, no watermark, no buildings, no game UI, no characters, no props outside the requested vegetation/rocks/shore/path. Asymmetric organic arrangement, no rectangular borders.\nSubject: One standalone sparse tall-grass group: two main upright blade tufts and one little side tuft, varied olive/lime-green blades bent in different directions, clean readable stylized shape, tiny contact shadow. No reed seedheads, no water, no flowers, no bushes, no broad ground patch."
+    },
+    {
+      "id": "rocks_01",
+      "folder": "rocks",
+      "size": "small",
+      "tiles": [
+        2,
+        2
+      ],
+      "name": "Каміння 1",
+      "subject": "One small standalone stone group: three gently faceted rounded warm-gray rocks, one larger central off-center stone and two smaller at unequal distances. Broad readable planes with subtle warm highlights and compact ground contact shadows. No grass, no shrubs, no soil slab.",
+      "file": "rocks/rocks_01.png",
+      "prompt": "Use case: stylized-concept.\nAsset type: one production-ready transparent PNG environment sprite for a 2D isometric village-building game in Godot.\nStyle: match the supplied Clash of Clans screenshot as a visual reference only: charming stylized mobile-strategy 3D painted sprites, rounded leafy canopies made of chunky readable leaf masses, natural lime/olive green highlights, deep green shaded foliage, warm brown trunks, warm gray stones. Broad readable forms that hold up when scaled down, modest surface detail. Match the elevated orthographic isometric view of the reference, camera looking down around 40 degrees, ground footprint projected with width-to-height roughly 4:3. Top-left daylight, compact soft shadows toward bottom-right.\nBackdrop: genuine transparent alpha outside the sprite. The asset sits flush on ground, never on a thick diamond tile, floating island, cutaway earth slab or pedestal. Ground patches, if requested, are thin, irregular and taper softly into transparency, no straight geometric boundary. Center the complete sprite with ample transparent padding and keep every branch, leaf, shadow and ground patch inside the frame.\nConstraints: exactly one cohesive standalone sprite, no multiple separated variants, no sprite sheet, no labels, no letters, no watermark, no buildings, no game UI, no characters, no props outside the requested vegetation/rocks/shore/path. Asymmetric organic arrangement, no rectangular borders.\nSubject: One small standalone stone group: three gently faceted rounded warm-gray rocks, one larger central off-center stone and two smaller at unequal distances. Broad readable planes with subtle warm highlights and compact ground contact shadows. No grass, no shrubs, no soil slab."
+    },
+    {
+      "id": "rocks_02",
+      "folder": "rocks",
+      "size": "small",
+      "tiles": [
+        3,
+        2
+      ],
+      "name": "Каміння 2",
+      "subject": "One small standalone low rock scatter: five warm-gray pebbles and medium stones of irregular rounded faceted shapes arranged as a loose asymmetrical diagonal, restrained tan highlights, short contact shadows. No moss, no grass or bushes, no broad earth patch.",
+      "file": "rocks/rocks_02.png",
+      "prompt": "Use case: stylized-concept.\nAsset type: one production-ready transparent PNG environment sprite for a 2D isometric village-building game in Godot.\nStyle: match the supplied Clash of Clans screenshot as a visual reference only: charming stylized mobile-strategy 3D painted sprites, rounded leafy canopies made of chunky readable leaf masses, natural lime/olive green highlights, deep green shaded foliage, warm brown trunks, warm gray stones. Broad readable forms that hold up when scaled down, modest surface detail. Match the elevated orthographic isometric view of the reference, camera looking down around 40 degrees, ground footprint projected with width-to-height roughly 4:3. Top-left daylight, compact soft shadows toward bottom-right.\nBackdrop: genuine transparent alpha outside the sprite. The asset sits flush on ground, never on a thick diamond tile, floating island, cutaway earth slab or pedestal. Ground patches, if requested, are thin, irregular and taper softly into transparency, no straight geometric boundary. Center the complete sprite with ample transparent padding and keep every branch, leaf, shadow and ground patch inside the frame.\nConstraints: exactly one cohesive standalone sprite, no multiple separated variants, no sprite sheet, no labels, no letters, no watermark, no buildings, no game UI, no characters, no props outside the requested vegetation/rocks/shore/path. Asymmetric organic arrangement, no rectangular borders.\nSubject: One small standalone low rock scatter: five warm-gray pebbles and medium stones of irregular rounded faceted shapes arranged as a loose asymmetrical diagonal, restrained tan highlights, short contact shadows. No moss, no grass or bushes, no broad earth patch."
+    },
+    {
+      "id": "rocks_03",
+      "folder": "rocks",
+      "size": "small",
+      "tiles": [
+        2,
+        3
+      ],
+      "name": "Каміння 3",
+      "subject": "One standalone compact group of shore stones: two chunky warm-gray boulders of unequal size and three small smooth pebbles beside them, subtly damp darker bases, readable soft facets and compact contact shadows. No water, no grass or shrubs, no ground slab.",
+      "file": "rocks/rocks_03.png",
+      "prompt": "Use case: stylized-concept.\nAsset type: one production-ready transparent PNG environment sprite for a 2D isometric village-building game in Godot.\nStyle: match the supplied Clash of Clans screenshot as a visual reference only: charming stylized mobile-strategy 3D painted sprites, rounded leafy canopies made of chunky readable leaf masses, natural lime/olive green highlights, deep green shaded foliage, warm brown trunks, warm gray stones. Broad readable forms that hold up when scaled down, modest surface detail. Match the elevated orthographic isometric view of the reference, camera looking down around 40 degrees, ground footprint projected with width-to-height roughly 4:3. Top-left daylight, compact soft shadows toward bottom-right.\nBackdrop: genuine transparent alpha outside the sprite. The asset sits flush on ground, never on a thick diamond tile, floating island, cutaway earth slab or pedestal. Ground patches, if requested, are thin, irregular and taper softly into transparency, no straight geometric boundary. Center the complete sprite with ample transparent padding and keep every branch, leaf, shadow and ground patch inside the frame.\nConstraints: exactly one cohesive standalone sprite, no multiple separated variants, no sprite sheet, no labels, no letters, no watermark, no buildings, no game UI, no characters, no props outside the requested vegetation/rocks/shore/path. Asymmetric organic arrangement, no rectangular borders.\nSubject: One standalone compact group of shore stones: two chunky warm-gray boulders of unequal size and three small smooth pebbles beside them, subtly damp darker bases, readable soft facets and compact contact shadows. No water, no grass or shrubs, no ground slab."
+    }
+  ]
+}

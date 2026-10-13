@@ -1,0 +1,19 @@
+Tool: built-in image_gen (transparent background enabled).
+Selected output: exec-effa7e41-6415-45e0-9f11-96972ef71756.png.
+Input: preceding temple variant based on an orthographic geometric blockout.
+
+Final edit prompt for the selected output:
+
+Use case: precise-object-edit. Edit this transparent temple sprite. Preserve its design, camera, size, position, colors, roof, tower, stone cross, windows, double doors, lanterns and hand-painted cartoon finish. Make ONLY two small structural corrections: (1) the ground foundation must have two perfectly straight bottom contact edges using the SAME symmetric ground projection: left edge slope +0.75 and right edge slope -0.75. The left edge already has the correct slope; keep it unchanged. The right base contact boundary must follow the matching -0.75 slope and meet the same lowest front corner. For the current 1254-square composition the ground diamond is centered about (642,930), width640 and height480, with left(322,930), right(962,930), front(642,1170), rear(642,690). Keep the lowest corner and the left edge fixed, correct the right foundation line accordingly. (2) Remove the projecting external staircase. Carve TWO SMALL RECESSED STONE STEPS INSIDE the stone foundation beneath the door. The stair treads must stay behind/inside the straight front-right ground contact boundary, never extend across it. The resulting footprint is one simple symmetric square stone plinth with a clean straight diamond perimeter, no front protrusion. You may recess the doorway bottom slightly to achieve this. Render proper structural stone shading, without drawing a line or diamond guide.
+Keep everything else unchanged, including the current framing. Genuine transparent alpha background, no terrain or cast ground shadow, no labels or UI.
+
+Measured export, not a claim of exact generator compliance:
+1254 x 1254 RGBA, actual transparent background.
+Logical footprint: 4 x 4; source ground width: 640 pixels.
+Use the existing shared automatic ground-anchor calculation.
+Visible lower foundation edges, fitted at alpha >= 128:
+left approximately +36.877 degrees, right approximately -36.144 degrees.
+Target grid edge angles: +/-36.870 degrees.
+The front-right raster contour retains up to about 8.25 source pixels of
+outward deviation (about 5 game pixels at scale 384/640). The sprite is
+an improved visual candidate, not a mathematically exact final contour.
