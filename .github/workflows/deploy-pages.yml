@@ -30,14 +30,16 @@ jobs:
           include-templates: true
 
       - name: Import project assets
-        run: godot --headless --editor --path . --import --quit
+        run: godot --headless --path . --import
 
       - name: Export browser build
         run: |
           mkdir -p build/web
           godot --headless --path . --export-release "Web" build/web/index.html
           test -s build/web/index.html
+          test -s build/web/index.js
           test -n "$(find build/web -maxdepth 1 -type f -name '*.wasm' -print -quit)"
+          test "$(stat -c %s build/web/index.pck)" -gt 1000000
           touch build/web/.nojekyll
 
       - name: Configure GitHub Pages
