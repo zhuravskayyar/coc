@@ -29,6 +29,9 @@ jobs:
           use-dotnet: false
           include-templates: true
 
+      - name: Skip Blender-only source files
+        run: find assets -type f \( -name '*.blend' -o -name '*.blend.import' \) -delete
+
       - name: Import project assets
         run: godot --headless --path . --import
 
