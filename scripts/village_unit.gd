@@ -44,6 +44,20 @@ func get_animation_metadata() -> Dictionary:
 	return MILITIA_METADATA.data
 
 
+func _ready() -> void:
+	_rng.randomize()
+	var metadata := get_animation_metadata()
+	sprite.scale = Vector2.ONE * float(metadata["world_scale"])
+	sprite.offset = -Vector2(float(metadata["ground_anchor"][0]), float(metadata["ground_anchor"][1]))
+	var info: Dictionary = _clips[String(animation)]
+	sprite.texture = get_animation_sheets()[animation]
+	sprite.hframes = int(info["columns"])
+	sprite.vframes = int(info["rows_per_direction"]) * 8
+	if animation == &"idle":
+		_animation_time = _rng.randf() * float(info["frames"]) / float(info["fps"])
+	_update_frame()
+
+
 func setup(camp: VillageBuilding, map: VillageMap, route: Array[Vector2i], army: ArmyManager) -> void:
 	home = camp
 	village_map = map
@@ -51,9 +65,6 @@ func setup(camp: VillageBuilding, map: VillageMap, route: Array[Vector2i], army:
 	_rng.randomize()
 	_cell = route[0]
 	global_position = _world(_cell)
-	var metadata := get_animation_metadata()
-	sprite.scale = Vector2.ONE * float(metadata["world_scale"])
-	sprite.offset = -Vector2(float(metadata["ground_anchor"][0]), float(metadata["ground_anchor"][1]))
 	follow_path(route)
 
 
@@ -101,8 +112,15 @@ func return_to_camp(camp: VillageBuilding, route: Array[Vector2i]) -> void:
 func set_animation(clip: StringName) -> void:
 	if animation == clip and sprite.texture == get_animation_sheets()[clip] and clip != &"attack":
 		return
+	var old_clip := animation
+	var old_time := _animation_time
 	animation = clip
 	_animation_time = 0.0
+	if old_clip in [&"walk", &"run"] and clip in [&"walk", &"run"]:
+		var previous: Dictionary = _clips[String(old_clip)]
+		var following: Dictionary = _clips[String(clip)]
+		var duration := float(previous["frames"]) / float(previous["fps"])
+		_animation_time = fposmod(old_time, duration) / duration * float(following["frames"]) / float(following["fps"])
 	sprite.texture = get_animation_sheets()[clip]
 	var info: Dictionary = _clips[String(clip)]
 	sprite.hframes = int(info["columns"])
@@ -144,6 +162,8 @@ func advance_behavior(delta: float) -> void:
 			_update_frame()
 		return
 	if village_map == null:
+		_animation_time += delta
+		_update_frame()
 		return
 	if not _path.is_empty():
 		_move(delta)
@@ -161,7 +181,9 @@ func advance_behavior(delta: float) -> void:
 
 func get_locomotion_playback(speed: float) -> float:
 	var angle := facing * PI / 4.0
-	var projection := Vector2(cos(angle), sin(angle) * float(get_animation_metadata()["ground_projection_y"])).length()
+	var metadata := get_animation_metadata()
+	var projections: Array = metadata.get("direction_ground_projection", [])
+	var projection := float(projections[facing]) if projections.size() == 8 else Vector2(cos(angle), sin(angle) * float(metadata["ground_projection_y"])).length()
 	return speed / (float(_clips[String(animation)]["ground_speed_mps"]) * sprite.scale.x * float(get_animation_metadata()["pixels_per_metre"]) * projection)
 
 

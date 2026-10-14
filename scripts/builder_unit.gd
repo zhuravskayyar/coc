@@ -38,6 +38,20 @@ var sides_worked: Array[int] = []
 @onready var _clips: Dictionary = ANIMATION_METADATA.data["clips"]
 
 
+func _ready() -> void:
+	rng.randomize()
+	var metadata: Dictionary = ANIMATION_METADATA.data
+	sprite.scale = Vector2.ONE * float(metadata["world_scale"])
+	sprite.offset = -Vector2(float(metadata["ground_anchor"][0]), float(metadata["ground_anchor"][1]))
+	var info: Dictionary = _clips[String(animation)]
+	sprite.texture = SHEETS[animation]
+	sprite.hframes = int(info["columns"])
+	sprite.vframes = int(info["rows_per_direction"]) * 8
+	if animation == &"idle":
+		_animation_time = rng.randf() * float(info["frames"]) / float(info["fps"])
+	_update_animation_frame()
+
+
 func setup(hut: VillageBuilding, map: VillageMap) -> void:
 	home = hut
 	village_map = map
@@ -107,7 +121,11 @@ func _process(delta: float) -> void:
 
 
 func advance_behavior(delta: float) -> void:
-	if village_map == null or not is_instance_valid(home) or delta <= 0.0:
+	if delta <= 0.0:
+		return
+	if village_map == null or not is_instance_valid(home):
+		_animation_time += delta
+		_update_animation_frame()
 		return
 	if state in [State.TO_SITE, State.HAMMERING, State.CHANGING_SIDE] and (not is_instance_valid(job) or job.is_queued_for_deletion() or not job.is_under_construction()):
 		finish_job()
@@ -145,7 +163,8 @@ func advance_behavior(delta: float) -> void:
 	var playback := 1.0
 	if animation in [&"walk", &"run"]:
 		var angle := facing * PI / 4.0
-		var projection := Vector2(cos(angle), sin(angle) * float(ANIMATION_METADATA.data["ground_projection_y"])).length()
+		var projections: Array = ANIMATION_METADATA.data.get("direction_ground_projection", [])
+		var projection := float(projections[facing]) if projections.size() == 8 else Vector2(cos(angle), sin(angle) * float(ANIMATION_METADATA.data["ground_projection_y"])).length()
 		var pixels_per_metre := sprite.scale.x * float(ANIMATION_METADATA.data["pixels_per_metre"]) * projection
 		var speed := RUN_SPEED if animation == &"run" else WALK_SPEED
 		playback = speed / (float(_clips[String(animation)]["ground_speed_mps"]) * pixels_per_metre)
@@ -378,8 +397,15 @@ func _set_animation(clip: StringName) -> void:
 		return
 	if animation == clip and sprite.texture == SHEETS[clip]:
 		return
+	var old_clip := animation
+	var old_time := _animation_time
 	animation = clip
 	_animation_time = 0.0
+	if old_clip in [&"walk", &"run"] and clip in [&"walk", &"run"]:
+		var previous: Dictionary = _clips[String(old_clip)]
+		var following: Dictionary = _clips[String(clip)]
+		var duration := float(previous["frames"]) / float(previous["fps"])
+		_animation_time = fposmod(old_time, duration) / duration * float(following["frames"]) / float(following["fps"])
 	sprite.texture = SHEETS[clip]
 	var info: Dictionary = _clips[String(clip)]
 	sprite.hframes = int(info["columns"])
@@ -403,6 +429,14 @@ func _draw() -> void:
 	if age < 0.0 or age > 1.0:
 		return
 	var angle := facing * PI / 4.0
+	var baked_impacts: Array = info.get("impact_positions", [])
+	if baked_impacts.size() == 8:
+		var point: Array = baked_impacts[facing]
+		var impact := (Vector2(float(point[0]), float(point[1])) + sprite.offset) * sprite.scale
+		for i in range(5):
+			var spread := (float(i) - 2.0) * 4.0
+			draw_circle(impact + Vector2(spread * age, -age * 15.0), 1.0 + age * 2.0, Color(0.89, 0.78, 0.56, (1.0 - age) * 0.5))
+		return
 	var contact: Array = info["impact_local_m"]
 	var projection_y := float(ANIMATION_METADATA.data["ground_projection_y"])
 	var pixels_per_metre := sprite.scale.x * float(ANIMATION_METADATA.data["pixels_per_metre"])

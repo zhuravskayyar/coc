@@ -1,0 +1,15 @@
+{
+  "godot_version": "4.7.2",
+  "source_checks": 71,
+  "idle_checks": 81,
+  "builder_checks": 78,
+  "archer_shoot_checks": 151,
+  "archer_locomotion_checks": 47,
+  "tower_checks": 191,
+  "construction_checks": 53,
+  "distinct_game_frames": 5656,
+  "studio_video_frames": 540,
+  "game_video_frames": 1080,
+  "video_fps": 30,
+  "known_unrelated_failure": "Army modal fits (960, 540): present in original HEAD and updated project"
+}

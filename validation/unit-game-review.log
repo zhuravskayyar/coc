@@ -1,0 +1,22 @@
+WARNING: Couldn't get executable path from /proc/self/exe, using argv[0]
+     at: get_executable_path (drivers/unix/os_unix.cpp:1157)
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+WARNING: Couldn't get executable path from /proc/self/exe, using argv[0]
+     at: get_executable_path (drivers/unix/os_unix.cpp:1157)
+WARNING: Could not set V-Sync mode, as changing V-Sync mode is not supported by the graphics driver.
+     at: set_use_vsync (platform/linuxbsd/x11/gl_manager_x11.cpp:372)
+OpenGL API 4.5 (Core Profile) Mesa 25.2.8-0ubuntu0.24.04.2 - Compatibility - Using Device: Mesa - llvmpipe (LLVM 20.1.2, 256 bits)
+
+Gameplay frame 90/1080 / builder hammer / arrows 0
+Gameplay frame 180/1080 / builder hammer / arrows 0
+Gameplay frame 270/1080 / builder walk / arrows 0
+Gameplay frame 360/1080 / builder walk / arrows 1
+Gameplay frame 450/1080 / builder hammer / arrows 2
+Gameplay frame 540/1080 / builder walk / arrows 4
+Gameplay frame 630/1080 / builder walk / arrows 4
+Gameplay frame 720/1080 / builder walk / arrows 4
+Gameplay frame 810/1080 / builder walk / arrows 4
+Gameplay frame 900/1080 / builder idle / arrows 4
+Gameplay frame 990/1080 / builder idle / arrows 4
+Gameplay frame 1080/1080 / builder idle / arrows 4
+Gameplay verified: 1080 real frames at 30 FPS; navigation, two ground shots, two live tower shots, construction and return home

@@ -9,6 +9,7 @@ var _hover_mask := -1
 var _placeable := false
 var _erasing := false
 var _hint: Label
+var _preview_visual: Palisade3DVisual
 @onready var village_map: VillageMap = get_parent()
 
 
@@ -28,6 +29,8 @@ func _ready() -> void:
 
 func set_enabled(value: bool) -> void:
 	enabled = value
+	if enabled and not is_instance_valid(_preview_visual):
+		_preview_visual = Palisade3DVisual.get_shared_visual(maxi(_hover_mask, 0), true)
 	_hint.visible = enabled
 	set_process(enabled)
 	if enabled:
@@ -79,6 +82,7 @@ func _process(_delta: float) -> void:
 		_hover_mask = mask
 		_placeable = placeable
 		_erasing = erasing
+		_preview_visual = Palisade3DVisual.get_shared_visual(mask, true)
 		queue_redraw()
 
 
@@ -91,12 +95,8 @@ func _draw() -> void:
 	draw_polyline(outline, color, 2.0, true)
 	if not _placeable or _erasing:
 		return
-	var definition := BuildingCatalog.get_visual_definition(&"wall", _hover_mask)
-	var texture := load(definition["texture"]) as Texture2D
-	if texture == null:
+	if not is_instance_valid(_preview_visual):
 		return
-	var source_width := float(definition["source_ground_width"])
-	var sprite_scale := VillageMap.TILE_SIZE.x / source_width
-	var anchor := VillageBuilding._get_source_ground_anchor(texture, source_width)
-	var rect := Rect2(village_map.cell_to_world(_hover_cell) - anchor * sprite_scale, Vector2(texture.get_size()) * sprite_scale)
-	draw_texture_rect(texture, rect, false, Color(1, 1, 1, 0.55))
+	var rect := _preview_visual.get_draw_rect()
+	rect.position += village_map.cell_to_world(_hover_cell)
+	draw_texture_rect(_preview_visual.get_texture(), rect, false, Color(1, 1, 1, 0.55))

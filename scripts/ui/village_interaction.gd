@@ -20,6 +20,8 @@ var _active_touches: Dictionary[int, bool] = {}
 var _preview_texture: Texture2D
 var _preview_anchor := Vector2.ZERO
 var _preview_scale := 1.0
+var _preview_tower: Tower3DVisual
+var _preview_palisade: Palisade3DVisual
 
 
 func _ready() -> void:
@@ -48,9 +50,20 @@ func begin_placement(building_type: StringName, building: VillageBuilding = null
 	moving = building
 	selected = building
 	selection_changed.emit(selected)
+	placement_cell = building.cell if building != null else Vector2i(17, 16)
 	var definition := BuildingCatalog.get_visual_definition(building_type)
-	_preview_texture = load(definition["texture"]) as Texture2D if definition.has("texture") else null
-	if _preview_texture != null:
+	if building_type == &"wall":
+		_refresh_palisade_preview()
+	elif definition.has("model"):
+		_preview_tower = Tower3DVisual.new()
+		add_child(_preview_tower)
+		_preview_tower.configure_ground_width(BuildingCatalog.get_footprint(building_type).x * VillageMap.TILE_SIZE.x)
+		_preview_texture = _preview_tower.get_texture()
+		_preview_anchor = _preview_tower.ground_anchor
+		_preview_scale = _preview_tower.draw_scale
+	else:
+		_preview_texture = load(definition["texture"]) as Texture2D if definition.has("texture") else null
+	if _preview_texture != null and not definition.has("model"):
 		var source_width := float(definition["source_ground_width"])
 		_preview_anchor = VillageBuilding._get_source_ground_anchor(_preview_texture, source_width)
 		_preview_scale = BuildingCatalog.get_footprint(building_type).x * VillageMap.TILE_SIZE.x / source_width
@@ -62,8 +75,6 @@ func begin_placement(building_type: StringName, building: VillageBuilding = null
 			for column in range(footprint.x):
 				blocked.erase(moving.cell + Vector2i(column, row))
 		village_map.placement_grid.set_blocked_cells(blocked)
-	# Start near the village, never under the catalog button that opened placement.
-	placement_cell = building.cell if building != null else Vector2i(17, 16)
 	_update_validity()
 	set_process(true)
 	queue_redraw()
@@ -93,6 +104,10 @@ func cancel_placement() -> void:
 	placing_type = StringName()
 	moving = null
 	_preview_texture = null
+	_preview_palisade = null
+	if is_instance_valid(_preview_tower):
+		_preview_tower.queue_free()
+		_preview_tower = null
 	set_process(false)
 	if is_instance_valid(village_map):
 		village_map.hide_placement_grid()
@@ -103,8 +118,21 @@ func cancel_placement() -> void:
 func set_placement_screen_position(screen_position: Vector2) -> void:
 	var local_position := village_map.get_global_transform_with_canvas().affine_inverse() * screen_position
 	placement_cell = village_map.world_to_cell(local_position)
+	if placing_type == &"wall":
+		_refresh_palisade_preview()
 	_update_validity()
 	queue_redraw()
+
+
+func _refresh_palisade_preview() -> void:
+	var mask := village_map.get_wall_connection_mask(placement_cell, moving)
+	_preview_palisade = Palisade3DVisual.get_shared_visual(mask, true)
+	if not is_instance_valid(_preview_palisade):
+		_preview_texture = null
+		return
+	_preview_texture = _preview_palisade.get_texture()
+	_preview_anchor = _preview_palisade.ground_anchor
+	_preview_scale = _preview_palisade.draw_scale
 
 
 func _update_validity() -> void:
@@ -208,7 +236,7 @@ func _draw() -> void:
 			var center := village_map.get_footprint_center(placement_cell, footprint)
 			var rect := Rect2(center - _preview_anchor * _preview_scale, Vector2(_preview_texture.get_size()) * _preview_scale)
 			draw_texture_rect(_preview_texture, rect, false, Color(1, 1, 1, 0.7))
-		# Draw the footprint above the PNG's grass, keeping its validity visible.
+		# Keep placement validity visible above the building visual.
 		draw_colored_polygon(polygon, Color(tint, 0.2))
 		polygon.append(polygon[0])
 		var canvas_scale := village_map.get_global_transform_with_canvas().get_scale().x

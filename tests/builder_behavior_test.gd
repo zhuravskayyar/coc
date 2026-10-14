@@ -26,7 +26,8 @@ func _run() -> void:
 		_check(worker.state == BuilderUnit.State.HOME and not worker.visible, "Workers start hidden at home")
 		_check(worker._wait >= 28.0 and worker._wait <= 65.0, "Long randomized home intervals dominate idle time")
 		_check(worker.sprite.texture != null and worker.sprite.hframes == 20 and worker.sprite.vframes == 24, "Idle atlas contains sixty poses in eight directions")
-		_check((worker.sprite.offset + Vector2(128, 193.401)).is_zero_approx(), "Every animation shares the model's foot anchor")
+		var anchor: Array = BuilderUnit.ANIMATION_METADATA.data["ground_anchor"]
+		_check((worker.sprite.offset + Vector2(anchor[0], anchor[1])).is_zero_approx(), "Every animation shares the supplied model's foot anchor")
 	var walker := manager.workers[0]
 	walker._animation_time = 20.0 / 30.0
 	walker._update_animation_frame()
@@ -173,7 +174,7 @@ func _check_3d_rig() -> void:
 	root.add_child(model)
 	var skeletons := model.find_children("*", "Skeleton3D", true, false)
 	var players := model.find_children("*", "AnimationPlayer", true, false)
-	_check(skeletons.size() == 1 and (skeletons[0] as Skeleton3D).get_bone_count() == 18, "The exported 3D model contains the actual 18-bone skeleton")
+	_check(skeletons.size() == 1 and (skeletons[0] as Skeleton3D).get_bone_count() == 65, "The supplied model retains its complete 65-bone skeleton")
 	_check(players.size() == 1, "The skeletal export includes an AnimationPlayer")
 	var skeleton: Skeleton3D = skeletons[0]
 	var player: AnimationPlayer = players[0]
@@ -185,7 +186,7 @@ func _check_3d_rig() -> void:
 			var info: Dictionary = BuilderUnit.ANIMATION_METADATA.data["clips"][clip.to_lower()]
 			_check(is_equal_approx(player.get_animation(clip).length, float(info["duration"])), "%s has the same duration in 3D and the sprite animation" % clip)
 			_check(float(info["fps"]) >= 30.0, "%s meets the required animation sample rate" % clip)
-	var thigh := skeleton.find_bone("Thigh.L")
+	var thigh := skeleton.find_bone("mixamorig_LeftUpLeg")
 	player.play("Walk")
 	player.seek(0.0, true)
 	var rest := skeleton.get_bone_pose_rotation(thigh)
@@ -195,7 +196,7 @@ func _check_3d_rig() -> void:
 	for mesh in model.find_children("*", "MeshInstance3D", true, false):
 		if mesh.skin != null:
 			skinned += 1
-	_check(skinned == 25, "All 25 material meshes are bound to the skeleton")
+	_check(skinned == 1, "The supplied textured mesh is bound to its original skeleton")
 	model.queue_free()
 
 

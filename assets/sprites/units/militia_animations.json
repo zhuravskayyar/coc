@@ -1,53 +1,82 @@
 {
-  "frame_size": [
-    256,
-    256
-  ],
-  "ground_anchor": [
-    132.764,
-    181.515
-  ],
-  "world_scale": 0.5,
-  "directions": 8,
-  "pixels_per_metre": 168.42105263157896,
-  "ground_projection_y": 0.7276068751089989,
-  "source": "assets/units/militia/militia_animated.blend",
-  "skeleton_bones": 65,
-  "direction_order": "E, SE, S, SW, W, NW, N, NE",
   "clips": {
-    "idle": {
-      "frames": 60,
-      "fps": 30,
-      "duration": 2.0,
+    "attack": {
       "columns": 20,
+      "duration": 1.0,
+      "fps": 60,
+      "frames": 60,
       "rows_per_direction": 3,
+      "source_animation": "Attack",
+      "texture": "res://assets/sprites/units/militia_attack_sheet.png",
+      "release_frame": 18
+    },
+    "idle": {
+      "columns": 20,
+      "duration": 2.0,
+      "fps": 30,
+      "frames": 60,
+      "rows_per_direction": 3,
+      "source_animation": "Idle",
       "texture": "res://assets/sprites/units/militia_idle_sheet.png"
     },
-    "walk": {
-      "frames": 30,
-      "fps": 30,
-      "duration": 1.0,
-      "columns": 10,
-      "rows_per_direction": 3,
-      "texture": "res://assets/sprites/units/militia_walk_sheet.png",
-      "ground_speed_mps": 0.32258064516129037
-    },
     "run": {
-      "frames": 20,
-      "fps": 30,
-      "duration": 0.6666666666666666,
-      "columns": 7,
+      "columns": 19,
+      "duration": 0.933333333333333,
+      "fps": 60,
+      "frames": 56,
+      "ground_speed_mps": 1.75106182694435,
       "rows_per_direction": 3,
+      "source_animation": "Run",
       "texture": "res://assets/sprites/units/militia_run_sheet.png",
-      "ground_speed_mps": 1.3
+      "source_license": "CC0-1.0 / Quaternius Universal Animation Library",
+      "motion_reference": "Jog_Fwd_Loop"
     },
-    "attack": {
-      "frames": 30,
-      "fps": 30,
-      "duration": 1.0,
-      "columns": 10,
+    "walk": {
+      "columns": 27,
+      "duration": 1.33333333333333,
+      "fps": 60,
+      "frames": 80,
+      "ground_speed_mps": 0.414386987686157,
       "rows_per_direction": 3,
-      "texture": "res://assets/sprites/units/militia_attack_sheet.png"
+      "source_animation": "Walk",
+      "texture": "res://assets/sprites/units/militia_walk_sheet.png",
+      "source_license": "CC0-1.0 / Quaternius Universal Animation Library",
+      "motion_reference": "Walk_Loop"
     }
-  }
+  },
+  "direction_ground_projection": [
+    0.999999796716793,
+    0.943527138314408,
+    0.624694825916606,
+    0.943527319512526,
+    0.999999796716793,
+    0.943527228913467,
+    0.624695188312842,
+    0.943527410111585
+  ],
+  "direction_order": "E, SE, S, SW, W, NW, N, NE",
+  "direction_yaws": [
+    2.21429739982539,
+    1.7761483046876,
+    0.643500822690996,
+    -0.489146282293611,
+    -0.927295253764399,
+    -1.3654443489022,
+    -2.4980918308988,
+    2.65244637129618
+  ],
+  "directions": 8,
+  "frame_size": [
+    176,
+    200
+  ],
+  "ground_anchor": [
+    87.999961853027,
+    161.866485595703
+  ],
+  "ground_projection_y": 0.624695,
+  "pixels_per_metre": 168.421054744985,
+  "skeleton_bones": 65,
+  "source": "assets/units/militia/militia_animated.glb",
+  "world_scale": 0.5
 }

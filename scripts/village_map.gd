@@ -153,11 +153,11 @@ func get_occupied_cells() -> Array[Vector2i]:
 	return _occupied_cells.keys()
 
 
-func get_wall_connection_mask(cell: Vector2i) -> int:
+func get_wall_connection_mask(cell: Vector2i, ignored_building: VillageBuilding = null) -> int:
 	var mask := 0
 	for i in range(BuildingCatalog.WALL_DIRECTIONS.size()):
 		var neighbor: VillageBuilding = _occupied_cells.get(cell + BuildingCatalog.WALL_DIRECTIONS[i])
-		if is_instance_valid(neighbor) and neighbor.building_type == "wall":
+		if is_instance_valid(neighbor) and neighbor != ignored_building and neighbor.building_type == "wall":
 			mask |= 1 << i
 	return mask
 

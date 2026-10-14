@@ -188,6 +188,10 @@ func _check_imported_arrow_track(player: AnimationPlayer, clip: String, held_arr
 
 
 func _check_native_blend_arrow_visibility() -> void:
+	var settings := ConfigFile.new()
+	if settings.load("res://assets/units/archer/archer_animated.blend.import") != OK or not FileAccess.file_exists(String(settings.get_value("remap", "path", ""))):
+		print("Legacy Blender check skipped: no Blender import available; canonical GLB is checked separately")
+		return
 	var model := load("res://assets/units/archer/archer_animated.blend").instantiate() as Node3D
 	root.add_child(model)
 	var players := model.find_children("*", "AnimationPlayer", true, false)

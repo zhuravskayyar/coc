@@ -1,0 +1,96 @@
+{
+  "archer": {
+    "archer_shoot": {
+      "frames": 54,
+      "fps": 60,
+      "duration": 0.9,
+      "min_sole_m": 0.0002846275098452772
+    },
+    "Idle": {
+      "frames": 120,
+      "fps": 60,
+      "duration": 2.0,
+      "min_sole_m": 0.00028463478722296886
+    },
+    "Run": {
+      "frames": 56,
+      "fps": 60,
+      "duration": 0.9333333333333333,
+      "min_sole_m": -1.0986287226613309e-06
+    },
+    "Walk": {
+      "frames": 80,
+      "fps": 60,
+      "duration": 1.3333333333333333,
+      "min_sole_m": -1.084116731434467e-06
+    }
+  },
+  "militia": {
+    "Idle": {
+      "frames": 60,
+      "fps": 30.0,
+      "duration": 2.0,
+      "min_sole_m": 0.0003000000000000216,
+      "max_ik_error_m": 0.0,
+      "worst_ik_target": {}
+    },
+    "Walk": {
+      "frames": 80,
+      "fps": 60.0,
+      "duration": 1.3333333333333333,
+      "min_sole_m": -8.775816294498287e-10,
+      "max_ik_error_m": 0.0,
+      "worst_ik_target": {}
+    },
+    "Run": {
+      "frames": 56,
+      "fps": 60.0,
+      "duration": 0.9333333333333333,
+      "min_sole_m": -4.897366488038069e-10,
+      "max_ik_error_m": 0.0,
+      "worst_ik_target": {}
+    },
+    "Attack": {
+      "frames": 60,
+      "fps": 60.0,
+      "duration": 1.0,
+      "min_sole_m": 0.0003000000000000216,
+      "max_ik_error_m": 0.0,
+      "worst_ik_target": {}
+    }
+  },
+  "builder": {
+    "Idle": {
+      "frames": 60,
+      "fps": 30.0,
+      "duration": 2.0,
+      "min_sole_m": 0.00025007909969067895,
+      "max_ik_error_m": 0.0,
+      "worst_ik_target": {}
+    },
+    "Walk": {
+      "frames": 80,
+      "fps": 60.0,
+      "duration": 1.3333333333333333,
+      "min_sole_m": 2.3102372602836277e-10,
+      "max_ik_error_m": 0.0,
+      "worst_ik_target": {}
+    },
+    "Run": {
+      "frames": 56,
+      "fps": 60.0,
+      "duration": 0.9333333333333333,
+      "min_sole_m": 8.287270882555153e-10,
+      "max_ik_error_m": 0.0,
+      "worst_ik_target": {}
+    },
+    "Hammer": {
+      "frames": 72,
+      "fps": 60.0,
+      "duration": 1.2,
+      "min_sole_m": 0.0002501078725572767,
+      "max_ik_error_m": 0.0,
+      "worst_ik_target": {}
+    }
+  }
+}

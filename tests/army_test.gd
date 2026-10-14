@@ -56,7 +56,7 @@ func _run() -> void:
 			for direction in range(8):
 				soldier.facing = direction
 				for index in range(int(info["frames"])):
-					soldier._animation_time = float(index) / 30.0
+					soldier._animation_time = float(index) / float(info["fps"])
 					soldier._update_frame()
 					_check(soldier.sprite.frame_coords.y >= direction * 3 and soldier.sprite.frame_coords.y < (direction + 1) * 3, "Every frame stays in its direction's atlas rows")
 		_check(soldier.global_position == origin, "Animation does not translate the world node")

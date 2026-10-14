@@ -22,6 +22,8 @@ static var _source_soil_colors: Dictionary[String, Color] = {}
 @export_range(1, 1) var level := 1
 
 var _texture: Texture2D
+var _tower_visual: Tower3DVisual
+var _palisade_visual: Palisade3DVisual
 var _sprite_rect := Rect2()
 var _visible_sprite_top := 0.0
 var _grass_ground: Polygon2D
@@ -130,6 +132,8 @@ func get_construction_rect() -> Rect2:
 
 
 func hit_test_visual(point: Vector2) -> bool:
+	if is_instance_valid(_palisade_visual):
+		return _palisade_visual.hit_test(point, _sprite_rect)
 	if is_under_construction() and is_instance_valid(_construction_front) and _construction_front.hit_test_scaffold(point):
 		return true
 	if _texture == null or not _sprite_rect.has_point(point):
@@ -137,7 +141,8 @@ func hit_test_visual(point: Vector2) -> bool:
 	var uv := (point - _sprite_rect.position) / _sprite_rect.size
 	if is_under_construction() and uv.y < 1.0 - lerpf(0.16, 1.0, get_construction_progress()):
 		return false
-	return _texture.get_image().get_pixelv(Vector2i(uv * Vector2(_texture.get_size()))).a > 0.5
+	var image := _texture.get_image()
+	return image != null and image.get_pixelv(Vector2i(uv * Vector2(_texture.get_size()))).a > 0.5
 
 
 func _notification(what: int) -> void:
@@ -172,15 +177,38 @@ func refresh_visuals() -> void:
 		return
 	_sync_grid_transform()
 	var definition := BuildingCatalog.get_visual_definition(StringName(building_type), wall_connection_mask)
-	_texture = load(definition["texture"]) as Texture2D if definition.has("texture") else null
-	if _texture != null:
+	if building_type == "wall" and definition.has("model"):
+		if is_instance_valid(_tower_visual):
+			_tower_visual.queue_free()
+			_tower_visual = null
+		_palisade_visual = Palisade3DVisual.get_shared_visual(wall_connection_mask)
+		_texture = _palisade_visual.get_texture()
+		_sprite_rect = _palisade_visual.get_draw_rect()
+		_visible_sprite_top = _palisade_visual.project_point(Vector3(0, 0.745, 0)).y
+	elif definition.has("model"):
+		_palisade_visual = null
+		if not is_instance_valid(_tower_visual):
+			_tower_visual = Tower3DVisual.new()
+			_tower_visual.name = "Tower3DVisual"
+			add_child(_tower_visual)
+		_tower_visual.configure_ground_width(footprint.x * VillageMap.TILE_SIZE.x)
+		_texture = _tower_visual.get_texture()
+		_sprite_rect = _tower_visual.get_draw_rect()
+		_visible_sprite_top = _tower_visual.project_point(Vector3(0, 1.0, 0)).y
+	else:
+		_palisade_visual = null
+		if is_instance_valid(_tower_visual):
+			_tower_visual.queue_free()
+			_tower_visual = null
+		_texture = load(definition["texture"]) as Texture2D if definition.has("texture") else null
+	if _texture != null and not definition.has("model"):
 		var source_ground_width := float(definition["source_ground_width"])
 		# Retain the existing uniform size; the asset's source width is not an offset.
 		var sprite_scale := footprint.x * VillageMap.TILE_SIZE.x / source_ground_width
 		var ground_anchor := _get_source_ground_anchor(_texture, source_ground_width)
 		_sprite_rect = Rect2(-ground_anchor * sprite_scale, Vector2(_texture.get_size()) * sprite_scale)
 		_visible_sprite_top = _sprite_rect.position.y + _texture.get_image().get_used_rect().position.y * sprite_scale
-	if building_type == "wall":
+	if building_type == "wall" and not definition.has("model"):
 		if not material is ShaderMaterial or (material as ShaderMaterial).shader != PALISADE_SOIL_SHADER:
 			var soil_material := ShaderMaterial.new()
 			soil_material.shader = PALISADE_SOIL_SHADER
@@ -266,6 +294,11 @@ static func _get_source_ground_anchor(texture: Texture2D, source_ground_width: f
 
 
 func _refresh_grass_ground() -> void:
+	var definition := BuildingCatalog.get_visual_definition(StringName(building_type), wall_connection_mask)
+	if building_type == "wall" and definition.has("model"):
+		if is_instance_valid(_grass_ground):
+			_grass_ground.visible = false
+		return
 	if not is_instance_valid(_grass_ground):
 		_grass_ground = Polygon2D.new()
 		_grass_ground.name = "GrassGround"
@@ -301,8 +334,9 @@ func _refresh_grass_ground() -> void:
 	var has_soil := building_type == "wall" and _texture != null
 	ground_material.set_shader_parameter("soil_enabled", has_soil)
 	if has_soil:
-		var definition := BuildingCatalog.get_visual_definition(&"wall", wall_connection_mask)
-		ground_material.set_shader_parameter("soil_color", _get_source_soil_color(_texture, definition["source_ground_width"]))
+		var soil_color := Color(0.9, 0.67, 0.36)
+		soil_color = _get_source_soil_color(_texture, float(definition["source_ground_width"]))
+		ground_material.set_shader_parameter("soil_color", soil_color)
 
 
 static func _get_source_soil_color(texture: Texture2D, source_width: float) -> Color:

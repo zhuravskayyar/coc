@@ -1,59 +1,116 @@
 {
-  "frame_size": [
-    256,
-    256
-  ],
-  "ground_anchor": [
-    128.0,
-    193.401
-  ],
-  "world_scale": 0.4873949579831933,
-  "directions": 8,
   "clips": {
-    "idle": {
-      "frames": 60,
-      "fps": 30,
-      "duration": 2.0,
-      "columns": 20,
+    "hammer": {
+      "columns": 24,
+      "duration": 1.2,
+      "fps": 60,
+      "frames": 72,
+      "impact_phase": 0.6,
+      "impact_positions": [
+        [
+          115.04167175293,
+          80.53547668457
+        ],
+        [
+          113.09629821777301,
+          92.237983703613
+        ],
+        [
+          76.99784851074199,
+          110.54553222656199
+        ],
+        [
+          35.1444396972656,
+          97.892387390137
+        ],
+        [
+          28.958251953125,
+          86.779754638672
+        ],
+        [
+          30.903579711914105,
+          75.0772247314453
+        ],
+        [
+          67.002105712891,
+          56.769630432128906
+        ],
+        [
+          108.85546875,
+          69.4227828979492
+        ]
+      ],
       "rows_per_direction": 3,
+      "source_animation": "Hammer",
+      "texture": "res://assets/sprites/units/builder_hammer_sheet.png"
+    },
+    "idle": {
+      "columns": 20,
+      "duration": 2.0,
+      "fps": 30,
+      "frames": 60,
+      "rows_per_direction": 3,
+      "source_animation": "Idle",
       "texture": "res://assets/sprites/units/builder_idle_sheet.png"
     },
-    "walk": {
-      "frames": 30,
-      "fps": 30,
-      "duration": 1.0,
-      "columns": 10,
-      "rows_per_direction": 3,
-      "texture": "res://assets/sprites/units/builder_walk_sheet.png",
-      "ground_speed_mps": 0.7741935483870968
-    },
     "run": {
-      "frames": 18,
-      "fps": 30,
-      "duration": 0.6,
-      "columns": 6,
+      "columns": 19,
+      "duration": 0.933333333333333,
+      "fps": 60,
+      "frames": 56,
+      "ground_speed_mps": 1.80002421140671,
       "rows_per_direction": 3,
+      "source_animation": "Run",
       "texture": "res://assets/sprites/units/builder_run_sheet.png",
-      "ground_speed_mps": 4.833333333333333
+      "source_license": "CC0-1.0 / Quaternius Universal Animation Library",
+      "motion_reference": "Jog_Fwd_Loop"
     },
-    "hammer": {
-      "frames": 36,
-      "fps": 30,
-      "duration": 1.2,
-      "columns": 12,
+    "walk": {
+      "columns": 27,
+      "duration": 1.33333333333333,
+      "fps": 60,
+      "frames": 80,
+      "ground_speed_mps": 0.398521274328232,
       "rows_per_direction": 3,
-      "texture": "res://assets/sprites/units/builder_hammer_sheet.png",
-      "impact_phase": 0.6,
-      "impact_local_m": [
-        0.34,
-        0.71,
-        0.91
-      ]
+      "source_animation": "Walk",
+      "texture": "res://assets/sprites/units/builder_walk_sheet.png",
+      "source_license": "CC0-1.0 / Quaternius Universal Animation Library",
+      "motion_reference": "Walk_Loop"
     }
   },
-  "pixels_per_metre": 88.27586206896552,
-  "ground_projection_y": 0.7276068751089989,
-  "source": "assets/units/builder/builder_rigged.blend",
+  "direction_ground_projection": [
+    0.999999796716793,
+    0.943527138314408,
+    0.624694825916606,
+    0.943527319512526,
+    0.999999796716793,
+    0.943527228913467,
+    0.624695188312842,
+    0.943527410111585
+  ],
   "direction_order": "E, SE, S, SW, W, NW, N, NE",
-  "skeleton_bones": 18
+  "direction_yaws": [
+    2.21429739982539,
+    1.7761483046876,
+    0.643500822690996,
+    -0.489146282293611,
+    -0.927295253764399,
+    -1.3654443489022,
+    -2.4980918308988,
+    2.65244637129618
+  ],
+  "directions": 8,
+  "frame_size": [
+    144,
+    192
+  ],
+  "ground_anchor": [
+    71.999961853027,
+    161.866485595703
+  ],
+  "ground_projection_y": 0.624695,
+  "pixels_per_metre": 168.421054744985,
+  "skeleton_bones": 65,
+  "source": "assets/units/builder/builder_animated.glb",
+  "world_scale": 0.5
 }

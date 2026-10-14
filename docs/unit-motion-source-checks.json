@@ -1,0 +1,71 @@
+{
+  "checks_passed": 71,
+  "units": {
+    "archer": {
+      "archer_shoot": {
+        "duration": 0.8999999761581421,
+        "min_sole_m_at_120hz": 0.00028456509102376434,
+        "rigid_shape_error_m": 0
+      },
+      "Idle": {
+        "duration": 2.0,
+        "min_sole_m_at_120hz": 0.00028457236839294676,
+        "rigid_shape_error_m": 0
+      },
+      "Run": {
+        "duration": 0.9333333373069763,
+        "min_sole_m_at_120hz": -0.0005984864376730036,
+        "rigid_shape_error_m": 0
+      },
+      "Walk": {
+        "duration": 1.3333333730697632,
+        "min_sole_m_at_120hz": -0.00018253014051478056,
+        "rigid_shape_error_m": 0
+      }
+    },
+    "militia": {
+      "Idle": {
+        "duration": 2.0,
+        "min_sole_m_at_120hz": 0.0002995587764133042,
+        "rigid_shape_error_m": 0
+      },
+      "Walk": {
+        "duration": 1.3333333730697632,
+        "min_sole_m_at_120hz": -0.00022211934652126086,
+        "rigid_shape_error_m": 0
+      },
+      "Run": {
+        "duration": 0.9333333373069763,
+        "min_sole_m_at_120hz": -0.0005020489490613663,
+        "rigid_shape_error_m": 0
+      },
+      "Attack": {
+        "duration": 1.0,
+        "min_sole_m_at_120hz": 0.0002127638812256289,
+        "rigid_shape_error_m": 0
+      }
+    },
+    "builder": {
+      "Idle": {
+        "duration": 2.0,
+        "min_sole_m_at_120hz": 0.00024985165589153807,
+        "rigid_shape_error_m": 3.3218054834582844e-08
+      },
+      "Walk": {
+        "duration": 1.3333333730697632,
+        "min_sole_m_at_120hz": -0.00034731106253272324,
+        "rigid_shape_error_m": 3.8788629141972564e-08
+      },
+      "Run": {
+        "duration": 0.9333333373069763,
+        "min_sole_m_at_120hz": -0.00046859489949219006,
+        "rigid_shape_error_m": 3.9660969564092596e-08
+      },
+      "Hammer": {
+        "duration": 1.2000000476837158,
+        "min_sole_m_at_120hz": 0.0002499212954617891,
+        "rigid_shape_error_m": 3.3578755109786584e-08
+      }
+    }
+  }
+}

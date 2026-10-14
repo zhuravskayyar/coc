@@ -44,6 +44,8 @@ var _previous_clip: StringName = &""
 var _previous_time := 0.0
 var _blend_elapsed := 0.0
 var _previous_playback := 1.0
+var _mounted_visual: Tower3DVisual
+var _tower_mounted := false
 
 @onready var bow_muzzle: Marker2D = $BowMuzzle
 
@@ -76,6 +78,11 @@ func set_animation(clip: StringName) -> void:
 
 
 func advance_behavior(delta: float) -> void:
+	if _tower_mounted and (not is_instance_valid(stationed_building) or stationed_building.is_queued_for_deletion()):
+		_detach_tower_visual()
+		stationed_building = null
+		z_as_relative = true
+		z_index = 0
 	super.advance_behavior(delta)
 	if delta <= 0.0 or _previous_clip == &"":
 		return
@@ -88,6 +95,47 @@ func advance_behavior(delta: float) -> void:
 	else:
 		_previous_time += delta * _previous_playback
 	_update_locomotion_blend()
+
+
+func station_at(building: VillageBuilding, screen_offset: Vector2 = Vector2(0, -52)) -> void:
+	_detach_tower_visual()
+	var visual := building._tower_visual
+	if is_instance_valid(visual):
+		screen_offset = visual.get_station_offset()
+	super.station_at(building, screen_offset)
+	if is_instance_valid(visual):
+		_mounted_visual = visual
+		_tower_mounted = true
+		_mounted_visual.set_archer_enabled(true)
+		sprite.visible = false
+		$GroundShadow.visible = false
+		_update_frame()
+
+
+func return_to_camp(camp: VillageBuilding, route: Array[Vector2i]) -> void:
+	_detach_tower_visual()
+	_attack_active = false
+	_attack_released = false
+	if not route.is_empty():
+		_cell = route[0]
+		global_position = _world(_cell)
+	super.return_to_camp(camp, route)
+
+
+func _exit_tree() -> void:
+	_detach_tower_visual()
+
+
+func _detach_tower_visual() -> void:
+	if is_instance_valid(_mounted_visual):
+		_mounted_visual.set_archer_enabled(false)
+	_mounted_visual = null
+	_tower_mounted = false
+	if is_instance_valid(sprite):
+		sprite.visible = true
+	var shadow := get_node_or_null("GroundShadow") as Sprite2D
+	if shadow != null:
+		shadow.visible = true
 
 
 func get_locomotion_playback(speed: float) -> float:
@@ -148,6 +196,8 @@ func fire_arrow() -> void:
 		return
 	_projectile_fired = true
 	var release_frame := int(_clips["attack"]["release_frame"])
+	if is_instance_valid(_mounted_visual):
+		_mounted_visual.sync_archer(&"attack", float(release_frame) / float(_clips["attack"]["fps"]), facing)
 	bow_muzzle.position = _muzzle_position(release_frame)
 	var origin := bow_muzzle.global_position
 	var direction := origin.direction_to(current_target_position)
@@ -179,12 +229,16 @@ func is_held_arrow_visible() -> bool:
 func _update_frame() -> void:
 	super._update_frame()
 	_update_locomotion_blend()
+	if is_instance_valid(_mounted_visual):
+		_mounted_visual.sync_archer(animation, _animation_time, facing)
 	if animation == &"attack" and is_instance_valid(bow_muzzle):
 		var frame := mini(int(_animation_time * float(_clips["attack"]["fps"]) + 0.000001), int(_clips["attack"]["frames"]) - 1)
 		bow_muzzle.position = _muzzle_position(frame)
 
 
 func _muzzle_position(frame: int) -> Vector2:
+	if is_instance_valid(_mounted_visual) and is_instance_valid(stationed_building):
+		return to_local(stationed_building.to_global(_mounted_visual.get_muzzle_position())) + muzzle_offset
 	var point: Array = _clips["attack"]["muzzle_positions"][facing][frame]
 	return sprite.position + (Vector2(float(point[0]), float(point[1])) + sprite.offset) * sprite.scale + muzzle_offset
 

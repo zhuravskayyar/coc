@@ -4,6 +4,7 @@ extends EditorScenePostImport
 # glTF carries arrow visibility as a valid, nonzero scale. In Godot it becomes
 # a discrete visibility property, so neither hidden geometry nor zero bases remain.
 func _post_import(scene: Node) -> Object:
+	preload("res://tools/import_unit_motion.gd").configure_scene(scene)
 	var held_arrow := scene.find_child("HeldArrow", true, false) as Node3D
 	if held_arrow == null:
 		push_error("Archer import is missing HeldArrow: %s" % get_source_file())

@@ -52,10 +52,18 @@ const DEFINITIONS := {
 	&"defense_tower": {
 		"gold_cost": 500, "build_seconds": 30.0,
 		"footprint": Vector2i(2, 2),
-		"texture": "res://assets/sprites/buildings/defense_tower_lv1_grid_v1.png",
-		"source_ground_width": 1100.0,
+		"model": "res://assets/buildings/defense_tower/wooden_tower.glb",
+		# The PNG is a catalogue thumbnail; world and placement views render the GLB.
+		"texture": "res://assets/sprites/buildings/defense_tower_3d_thumbnail.png",
+		"source_ground_width": 420.0,
 	},
-	&"wall": {"footprint": Vector2i(1, 1), "gold_cost": 25, "build_seconds": 0.0},
+	&"wall": {
+		"footprint": Vector2i(1, 1), "gold_cost": 25, "build_seconds": 0.0,
+		"model": "res://assets/buildings/palisade/fence_post.glb",
+		"beam_model": "res://assets/buildings/palisade/fence_beam.glb",
+		# The catalogue uses a thumbnail; placed walls render both GLB modules in a SubViewport.
+		"texture": "res://assets/sprites/buildings/palisade_3d_thumbnail.png",
+	},
 	&"trap": {"footprint": Vector2i(1, 1)},
 	&"decor_small": {"footprint": Vector2i(1, 1), "blocks_movement": false},
 	&"decor_large": {"footprint": Vector2i(2, 2), "blocks_movement": false},
@@ -63,29 +71,9 @@ const DEFINITIONS := {
 
 
 const WALL_DIRECTIONS := [Vector2i(0, -1), Vector2i(1, 0), Vector2i(0, 1), Vector2i(-1, 0)]
-const WALL_SPRITES := {
-	0: {"texture": "res://assets/sprites/buildings/palisade_lv1_mask_00_v2.png", "source_ground_width": 989.0},
-	1: {"texture": "res://assets/sprites/buildings/palisade_lv1_mask_01_v2.png", "source_ground_width": 962.0},
-	2: {"texture": "res://assets/sprites/buildings/palisade_lv1_mask_02_v2.png", "source_ground_width": 971.0},
-	3: {"texture": "res://assets/sprites/buildings/palisade_lv1_mask_03_v2.png", "source_ground_width": 1018.0},
-	4: {"texture": "res://assets/sprites/buildings/palisade_lv1_mask_04_v2.png", "source_ground_width": 990.0},
-	5: {"texture": "res://assets/sprites/buildings/palisade_lv1_mask_05_v2.png", "source_ground_width": 1040.0},
-	6: {"texture": "res://assets/sprites/buildings/palisade_lv1_mask_06_v2.png", "source_ground_width": 1034.0},
-	7: {"texture": "res://assets/sprites/buildings/palisade_lv1_mask_07_v2.png", "source_ground_width": 1060.0},
-	8: {"texture": "res://assets/sprites/buildings/palisade_lv1_mask_08_v2.png", "source_ground_width": 951.0},
-	9: {"texture": "res://assets/sprites/buildings/palisade_lv1_mask_09_v2.png", "source_ground_width": 1041.0},
-	10: {"texture": "res://assets/sprites/buildings/palisade_lv1_mask_10_v2.png", "source_ground_width": 1051.0},
-	11: {"texture": "res://assets/sprites/buildings/palisade_lv1_mask_11_v2.png", "source_ground_width": 1078.0},
-	12: {"texture": "res://assets/sprites/buildings/palisade_lv1_mask_12_v2.png", "source_ground_width": 946.0},
-	13: {"texture": "res://assets/sprites/buildings/palisade_lv1_mask_13_v2.png", "source_ground_width": 1046.0},
-	14: {"texture": "res://assets/sprites/buildings/palisade_lv1_mask_14_v2.png", "source_ground_width": 1030.0},
-	15: {"texture": "res://assets/sprites/buildings/palisade_lv1_mask_15_v2.png", "source_ground_width": 1046.0},
-}
-
-
 static func get_visual_definition(building_type: StringName, wall_connections: int = 0) -> Dictionary:
 	if building_type == &"wall":
-		return WALL_SPRITES[wall_connections & 15]
+		return DEFINITIONS[&"wall"]
 	return DEFINITIONS.get(building_type, {})
 
 
