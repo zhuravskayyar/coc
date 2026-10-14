@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cxr67sefc3loj"
 path.s3tc="res://.godot/imported/militia_source_tripo_image_641249e3-5291-4d94-bba9-be8f373ec75b_0_0.jpg-f460e1b6033f5ca14a82a290b15eb3cd.s3tc.ctex"
+path.etc2="res://.godot/imported/militia_source_tripo_image_641249e3-5291-4d94-bba9-be8f373ec75b_0_0.jpg-f460e1b6033f5ca14a82a290b15eb3cd.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://assets/units/militia/militia_source_tripo_image_641249e3-5291-4d94-bba9-be8f373ec75b_0_0.jpg"
-dest_files=["res://.godot/imported/militia_source_tripo_image_641249e3-5291-4d94-bba9-be8f373ec75b_0_0.jpg-f460e1b6033f5ca14a82a290b15eb3cd.s3tc.ctex"]
+dest_files=["res://.godot/imported/militia_source_tripo_image_641249e3-5291-4d94-bba9-be8f373ec75b_0_0.jpg-f460e1b6033f5ca14a82a290b15eb3cd.s3tc.ctex", "res://.godot/imported/militia_source_tripo_image_641249e3-5291-4d94-bba9-be8f373ec75b_0_0.jpg-f460e1b6033f5ca14a82a290b15eb3cd.etc2.ctex"]
 
 [params]
 

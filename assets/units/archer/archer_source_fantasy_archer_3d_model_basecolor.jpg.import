@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cwka0830tdx3f"
 path.s3tc="res://.godot/imported/archer_source_fantasy_archer_3d_model_basecolor.jpg-91112939fee5621d55f07b2c52f2d4ed.s3tc.ctex"
+path.etc2="res://.godot/imported/archer_source_fantasy_archer_3d_model_basecolor.jpg-91112939fee5621d55f07b2c52f2d4ed.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://assets/units/archer/archer_source_fantasy_archer_3d_model_basecolor.jpg"
-dest_files=["res://.godot/imported/archer_source_fantasy_archer_3d_model_basecolor.jpg-91112939fee5621d55f07b2c52f2d4ed.s3tc.ctex"]
+dest_files=["res://.godot/imported/archer_source_fantasy_archer_3d_model_basecolor.jpg-91112939fee5621d55f07b2c52f2d4ed.s3tc.ctex", "res://.godot/imported/archer_source_fantasy_archer_3d_model_basecolor.jpg-91112939fee5621d55f07b2c52f2d4ed.etc2.ctex"]
 
 [params]
 

@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://o4tixjcta4ji"
 path.s3tc="res://.godot/imported/fantasy_archer_3d_model_rm.png-711eedbd367f6eaa7c9191c93032684c.s3tc.ctex"
+path.etc2="res://.godot/imported/fantasy_archer_3d_model_rm.png-711eedbd367f6eaa7c9191c93032684c.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/units/archer/textures/fantasy_archer_3d_model_rm.png"
-dest_files=["res://.godot/imported/fantasy_archer_3d_model_rm.png-711eedbd367f6eaa7c9191c93032684c.s3tc.ctex"]
+dest_files=["res://.godot/imported/fantasy_archer_3d_model_rm.png-711eedbd367f6eaa7c9191c93032684c.s3tc.ctex", "res://.godot/imported/fantasy_archer_3d_model_rm.png-711eedbd367f6eaa7c9191c93032684c.etc2.ctex"]
 
 [params]
 

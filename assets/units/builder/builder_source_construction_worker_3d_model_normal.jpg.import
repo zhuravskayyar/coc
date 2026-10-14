@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://c10rnkab84k1h"
 path.s3tc="res://.godot/imported/builder_source_construction_worker_3d_model_normal.jpg-3cd268b8ab1a664fd74a884a0f859041.s3tc.ctex"
+path.etc2="res://.godot/imported/builder_source_construction_worker_3d_model_normal.jpg-3cd268b8ab1a664fd74a884a0f859041.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://assets/units/builder/builder_source_construction_worker_3d_model_normal.jpg"
-dest_files=["res://.godot/imported/builder_source_construction_worker_3d_model_normal.jpg-3cd268b8ab1a664fd74a884a0f859041.s3tc.ctex"]
+dest_files=["res://.godot/imported/builder_source_construction_worker_3d_model_normal.jpg-3cd268b8ab1a664fd74a884a0f859041.s3tc.ctex", "res://.godot/imported/builder_source_construction_worker_3d_model_normal.jpg-3cd268b8ab1a664fd74a884a0f859041.etc2.ctex"]
 
 [params]
 

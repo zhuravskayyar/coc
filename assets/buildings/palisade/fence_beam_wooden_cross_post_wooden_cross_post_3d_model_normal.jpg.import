@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://ym8grpi0sqn2"
 path.s3tc="res://.godot/imported/fence_beam_wooden_cross_post_wooden_cross_post_3d_model_normal.jpg-1c7377ac677086b6a2fb4f6a36e1f911.s3tc.ctex"
+path.etc2="res://.godot/imported/fence_beam_wooden_cross_post_wooden_cross_post_3d_model_normal.jpg-1c7377ac677086b6a2fb4f6a36e1f911.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://assets/buildings/palisade/fence_beam_wooden_cross_post_wooden_cross_post_3d_model_normal.jpg"
-dest_files=["res://.godot/imported/fence_beam_wooden_cross_post_wooden_cross_post_3d_model_normal.jpg-1c7377ac677086b6a2fb4f6a36e1f911.s3tc.ctex"]
+dest_files=["res://.godot/imported/fence_beam_wooden_cross_post_wooden_cross_post_3d_model_normal.jpg-1c7377ac677086b6a2fb4f6a36e1f911.s3tc.ctex", "res://.godot/imported/fence_beam_wooden_cross_post_wooden_cross_post_3d_model_normal.jpg-1c7377ac677086b6a2fb4f6a36e1f911.etc2.ctex"]
 
 [params]
 

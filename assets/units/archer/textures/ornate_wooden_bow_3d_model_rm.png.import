@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://b0uxl6owvy068"
 path.s3tc="res://.godot/imported/ornate_wooden_bow_3d_model_rm.png-f0cd713da0d56fcce28de16a75608a5b.s3tc.ctex"
+path.etc2="res://.godot/imported/ornate_wooden_bow_3d_model_rm.png-f0cd713da0d56fcce28de16a75608a5b.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/units/archer/textures/ornate_wooden_bow_3d_model_rm.png"
-dest_files=["res://.godot/imported/ornate_wooden_bow_3d_model_rm.png-f0cd713da0d56fcce28de16a75608a5b.s3tc.ctex"]
+dest_files=["res://.godot/imported/ornate_wooden_bow_3d_model_rm.png-f0cd713da0d56fcce28de16a75608a5b.s3tc.ctex", "res://.godot/imported/ornate_wooden_bow_3d_model_rm.png-f0cd713da0d56fcce28de16a75608a5b.etc2.ctex"]
 
 [params]
 
