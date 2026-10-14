@@ -7,7 +7,7 @@ const BUILDINGS := {
 	&"builder_hut": {"title": "Будиночок будівельника", "category": "Інше", "icon": "hammer", "description": "Домівка й майстерня будівельника. Тут він зберігає інструменти для роботи в поселенні."},
 	&"war_tent": {"title": "Військовий намет", "category": "Армія", "icon": "army", "description": "Тренує ополченців: 100 хліба та 10 секунд за одного воїна."},
 	&"unit_camp": {"title": "Армійський табір", "category": "Армія", "icon": "flag", "description": "Місце збору армії. Вільний простір усередині табору призначений для військ."},
-	&"defense_tower": {"title": "Башта лучниці", "category": "Оборона", "icon": "shield", "description": "Оборонна башта. На платформу можна поставити навчену лучницю."},
+	&"defense_tower": {"title": "Башта лучниці", "category": "Оборона", "icon": "shield", "description": "На платформі є власна анімована лучниця. Вона не входить до армії."},
 	&"gold_extractor": {"title": "Золота копальня", "category": "Ресурси", "icon": "gold", "description": "Добуває золото для будівництва та покращень поселення."},
 	&"gold_storage": {"title": "Сховище золота", "category": "Ресурси", "icon": "shop", "description": "Зберігає золото, зібране в копальнях і здобуте в боях."},
 	&"wall": {"title": "Частокіл", "category": "Оборона", "icon": "shield", "description": "Дерев’яна огорожа. Сусідні секції автоматично з’єднуються між собою."},
@@ -27,6 +27,9 @@ var _utility: HBoxContainer
 var _navigation: HBoxContainer
 var _attack: Button
 var _build: Button
+var _fullscreen_button: Button
+var _fullscreen_check_button: CheckButton
+var _fullscreen_state := false
 var _selection_panel: PanelContainer
 var _selection_content: VBoxContainer
 var _placement_panel: PanelContainer
@@ -86,6 +89,7 @@ func _ready() -> void:
 	army.changed.connect(_refresh_army)
 	get_viewport().size_changed.connect(_layout)
 	_refresh_economy()
+	_fullscreen_state = _is_fullscreen()
 	_layout()
 
 
@@ -124,6 +128,10 @@ func _on_build_rejected(reason: String) -> void:
 
 
 func _process(_delta: float) -> void:
+	var fullscreen_active := _is_fullscreen()
+	if fullscreen_active != _fullscreen_state:
+		_fullscreen_state = fullscreen_active
+		_sync_fullscreen_controls(fullscreen_active)
 	_army_refresh_left -= _delta
 	if is_instance_valid(_army_queue) and has_modal() and _army_refresh_left <= 0.0:
 		_army_refresh_left = 0.25
@@ -196,6 +204,13 @@ func _create_hud() -> void:
 	settings.custom_minimum_size = Vector2(52, 52)
 	settings.pressed.connect(_show_settings)
 	_utility.add_child(settings)
+	_fullscreen_button = UI.hud_button("", "", "wood", 30)
+	_fullscreen_button.icon = _create_fullscreen_icon()
+	_fullscreen_button.expand_icon = true
+	_fullscreen_button.custom_minimum_size = Vector2(52, 52)
+	_fullscreen_button.tooltip_text = "На весь екран"
+	_fullscreen_button.pressed.connect(_toggle_fullscreen)
+	_utility.add_child(_fullscreen_button)
 	_attack = _navigation_button("Атака!", "sword", "bronze", true)
 	_attack.pressed.connect(_show_attack)
 	_canvas.add_child(_attack)
@@ -339,21 +354,7 @@ func _on_selection_changed(building: VillageBuilding) -> void:
 		army_button.pressed.connect(_show_army)
 		_selection_content.add_child(army_button)
 	if not building.is_under_construction() and building.building_type == "defense_tower":
-		var stationed := army.archer_on_tower(building) != null
-		var garrison_status := UI.hud_label("На платформі є лучниця." if stationed else "Платформа вільна.", 17)
-		_selection_content.add_child(garrison_status)
-		var garrison := UI.hud_button("Зняти лучницю" if stationed else "Поставити лучницю", "army", "wood", 20)
-		var station_error := army.get_tower_station_error(building)
-		garrison.disabled = not stationed and not station_error.is_empty()
-		garrison.tooltip_text = "" if stationed else station_error
-		garrison.pressed.connect(func():
-			if stationed:
-				army.return_archer_from_tower(building)
-			else:
-				army.station_archer(building)
-			_on_selection_changed(building)
-		)
-		_selection_content.add_child(garrison)
+		_selection_content.add_child(UI.hud_label("Власна лучниця башти · поза армією", 17))
 	_layout()
 
 
@@ -663,7 +664,7 @@ func _show_army() -> void:
 	archer_details.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	archer_card.add_child(archer_details)
 	archer_details.add_child(UI.label(UnitCatalog.ARCHER["title"], 27, true))
-	archer_details.add_child(UI.label("Дальній бій · місце на башті лучниці", 19))
+	archer_details.add_child(UI.label("Дальній бій · поповнює армію", 19))
 	archer_details.add_child(UI.label("125 хліба · 10 секунд", 19))
 	_archer_train_button = UI.button("Тренувати лучницю · 125", "bread", "bronze")
 	_archer_train_button.name = "TrainArcher"
@@ -696,7 +697,7 @@ func _refresh_army() -> void:
 		errors.append("Ополченець: " + militia_error)
 	if not archer_error.is_empty():
 		errors.append("Лучниця: " + archer_error)
-	_army_error.text = "\n".join(errors) if not errors.is_empty() else "Готові воїни виходять із намету до табору. На башті можна поставити одну лучницю."
+	_army_error.text = "\n".join(errors) if not errors.is_empty() else "Готові воїни виходять із намету до табору. Вбудовані лучниці башт до армії не входять."
 
 
 func _show_attack() -> void:
@@ -712,10 +713,45 @@ func _show_settings() -> void:
 	_add_paragraph("Лівий клік — вибрати або поставити будівлю\nКолесо миші — наблизити або віддалити\nПрава кнопка + рух миші — пересунути карту\n«Скасувати» — скасувати розміщення\n«Прибирати» — видаляти секції частоколу\n«Готово» — завершити роботу з частоколом\n× — закрити вікно")
 	var fullscreen := CheckButton.new()
 	fullscreen.text = "Повноекранний режим"
-	fullscreen.button_pressed = DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_FULLSCREEN
-	fullscreen.toggled.connect(func(enabled: bool): DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN if enabled else DisplayServer.WINDOW_MODE_WINDOWED))
+	_fullscreen_check_button = fullscreen
+	fullscreen.button_pressed = _is_fullscreen()
+	fullscreen.toggled.connect(_set_fullscreen)
 	_modal_content.add_child(fullscreen)
 	_layout()
+
+
+static func _create_fullscreen_icon() -> Texture2D:
+	var icon_image := Image.new()
+	var svg := """
+	<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+		<path d="M23 8H8V23 M41 8H56V23 M56 41V56H41 M23 56H8V41" fill="none" stroke="#291c12" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+		<path d="M23 8H8V23 M41 8H56V23 M56 41V56H41 M23 56H8V41" fill="none" stroke="#f0dfbc" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+	</svg>
+	"""
+	if icon_image.load_svg_from_string(svg) != OK:
+		return null
+	return ImageTexture.create_from_image(icon_image)
+
+
+func _toggle_fullscreen() -> void:
+	_set_fullscreen(not _is_fullscreen())
+
+
+func _set_fullscreen(enabled: bool) -> void:
+	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN if enabled else DisplayServer.WINDOW_MODE_WINDOWED)
+	_fullscreen_state = _is_fullscreen()
+	_sync_fullscreen_controls(_fullscreen_state)
+
+
+func _sync_fullscreen_controls(enabled: bool) -> void:
+	if is_instance_valid(_fullscreen_button):
+		_fullscreen_button.tooltip_text = "Вийти з повного екрана" if enabled else "На весь екран"
+	if is_instance_valid(_fullscreen_check_button):
+		_fullscreen_check_button.set_pressed_no_signal(enabled)
+
+
+func _is_fullscreen() -> bool:
+	return DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_FULLSCREEN
 
 
 func _show_message(title: String, text: String, icon_name: String) -> void:
@@ -759,7 +795,7 @@ func _layout() -> void:
 	_place(_profile, Vector2(margin, margin), Vector2(280, 68))
 	_place(_builder, Vector2((width - 138) * 0.5, margin + 2), Vector2(138, 60))
 	_place(_resources, Vector2(width - 264, margin), Vector2(246, 148))
-	_place(_utility, Vector2(margin, 98), Vector2(111, 52))
+	_place(_utility, Vector2(margin, 98), Vector2(170, 52))
 	_place(_attack, Vector2(margin, height - 114), Vector2(156, 96))
 	_place(_build, Vector2(width - 174, height - 114), Vector2(156, 96))
 	_place(_navigation, Vector2((width - 386) * 0.5, height - 98), Vector2(386, 80))

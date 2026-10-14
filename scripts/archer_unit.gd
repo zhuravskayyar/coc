@@ -128,7 +128,8 @@ func _exit_tree() -> void:
 
 func _detach_tower_visual() -> void:
 	if is_instance_valid(_mounted_visual):
-		_mounted_visual.set_archer_enabled(false)
+		# Towers have their own built-in archer; returning a trained unit must not remove her.
+		_mounted_visual.sync_archer(&"idle", 0.0, 2)
 	_mounted_visual = null
 	_tower_mounted = false
 	if is_instance_valid(sprite):

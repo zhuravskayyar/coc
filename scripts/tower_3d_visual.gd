@@ -106,10 +106,10 @@ func set_archer_enabled(enabled: bool) -> void:
 		skeleton = archer.find_child("Skeleton3D", true, false) as Skeleton3D
 		bow_muzzle = archer.find_child("BowMuzzle", true, false) as Node3D
 		held_arrow = archer.find_child("HeldArrow", true, false) as Node3D
+		if player != null:
+			player.play(&"Idle")
 		for node in archer.find_children("*", "BoneAttachment3D", true, false):
 			hand_attachments.append(node as BoneAttachment3D)
-		# The existing unit clock drives both the pose and the projectile release.
-		player.callback_mode_process = AnimationMixer.ANIMATION_CALLBACK_MODE_PROCESS_MANUAL
 	if is_instance_valid(archer):
 		archer.visible = enabled
 	viewport.render_target_update_mode = SubViewport.UPDATE_ALWAYS if enabled else SubViewport.UPDATE_ONCE

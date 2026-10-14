@@ -91,6 +91,7 @@ func advance_construction(delta: float) -> void:
 		_completion_time = 0.0
 		_refresh_construction_visuals()
 		_refresh_campfire()
+		_refresh_tower_archer()
 		var map := get_village_map()
 		if map != null:
 			map.rebuild_building_grid()
@@ -219,7 +220,13 @@ func refresh_visuals() -> void:
 	_refresh_grass_ground()
 	_refresh_campfire()
 	_refresh_construction_visuals()
+	_refresh_tower_archer()
 	queue_redraw()
+
+
+func _refresh_tower_archer() -> void:
+	if is_instance_valid(_tower_visual):
+		_tower_visual.set_archer_enabled(building_type == "defense_tower" and not is_under_construction())
 
 
 func refresh_wall_connections(mask: int) -> void:
